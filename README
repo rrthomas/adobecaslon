@@ -1,10 +1,6 @@
-While such engines as xetex and luatex can use native system fonts,
-the installation base of pdftex is large enough to justify its
-continuing support with new fonts.
-
+adobecaslon
+===========
 
 This package provides support files for the Adobe Caslon font family
-from Adobe.  According to the Fontname scheme, this corresponds to the
-family pac.  We provide the necessary font files---everything but the
-fonts.
-
+in pdfLaTeX. (The LuaTeX and XeTeX engines support system fonts
+directly, but there are still good reasons to use pdfTeX.)
