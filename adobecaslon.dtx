@@ -145,11 +145,9 @@
 % To use the package, add to the preamble of your document the usual
 % incantation \cmd{\usepackage}\oarg{options}|{adobecaslon}|.
 %
-%
-% The package supports several options.  The option |rmdefault| makes
-% Adobe Caslon your default Roman family.  The option |normdefault|
-% does not do this.  The options |scaled=...| scales Adobe fonts to
-% the given scale.
+% By default, Adobe Caslon is made the default roman font (option
+% |rmdefault|). The option |normdefault| prevents this.
+% The option |scaled=...| scales Adobe fonts to the given scale.
 %
 % The package provides Adobe fonts in two shapes: upright and italic,
 % and in three weights: medium (|m|), semibold (|sb|) and bold (|b|).
@@ -394,7 +392,7 @@
 %    \begin{macrocode}
 %<*style>
 \newif\ifPAC@default
-\PAC@defaultfalse
+\PAC@defaulttrue
 \RequirePackage{keyval}
 \define@key{PAC}{scaled}[1.00]{%
   \def\PAC@scale{#1}}
