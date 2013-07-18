@@ -4,3 +4,43 @@ adobecaslon
 This package provides support files for the Adobe Caslon font family
 in pdfLaTeX. (The LuaTeX and XeTeX engines support system fonts
 directly, but there are still good reasons to use pdfTeX.)
+
+
+Installation
+------------
+
+See the file adobecaslon.pdf. If you do not have this file, you
+probably have the development sources, not the distribution. Get the
+distribution from http://www.ctan.org/pkg/adobecaslon
+
+
+Building from development sources
+---------------------------------
+
+(This should only be necessary if you are a developer wanting to work
+on the package.)
+
+Before you start, you must have installed the PostScript Type 1 font
+files (.pfb) in TEXMF/fonts/type1/adobe/adobecaslon
+
+You also need the “make” utility installed (many systems will have
+this already).
+
+Then run:
+
+    make
+
+and, assuming everything went OK,
+
+    make install
+
+to install in TEXMFLOCAL. If you want to install elsewhere, you can
+specify a different TEXMF; for example,
+
+    make install TEXMF=`kpsewhich --expand-var='$TEXMFHOME'`
+
+to install under TEXMFHOME.
+
+Finally, follow the final part of the installation instructions in the
+“Installation” section of adobecaslon.pdf, a copy of which should now
+be in the current directory.
