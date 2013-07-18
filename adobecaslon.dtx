@@ -1,0 +1,455 @@
+% \iffalse
+% $Id: adobecaslon.dtx,v 1.4 2012-06-06 02:59:08 boris Exp $
+%
+% Copyright (c) 2012, Boris Veytsman
+%
+% All rights reserved.
+%
+% Redistribution and use in source and binary forms, with or without
+% modification, are permitted provided that the following conditions
+% are met: 
+%
+%    * Redistributions of source code must retain the above copyright
+%    notice, this list of conditions and the following disclaimer. 
+%    * Redistributions in binary form must reproduce the above
+%    copyright notice, this list of conditions and the following
+%    disclaimer in the documentation and/or other materials provided
+%    with the distribution. 
+%    * Neither the name of the original author nor the names of the
+%    contributors may be used to endorse or promote products derived
+%    from this software without specific prior written permission. 
+%
+% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+% CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+% INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+% MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+% DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+% BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+% EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+% TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+% DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+% ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+% OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+% OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+% POSSIBILITY OF SUCH DAMAGE.
+%
+% \fi 
+% \CheckSum{299}
+%
+%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~} 
+%
+%
+% \MakeShortVerb{|}
+% \GetFileInfo{adobecaslon.dtx}
+% \title{\LaTeX{} Support For Adobe Caslon Fonts}
+% \author{Boris Veytsman\thanks{%
+% \href{mailto:borisv@lk.net}{\texttt{borisv@lk.net}},
+% \href{mailto:boris@varphi.com}{\texttt{boris@varphi.com}}}} 
+% \date{\filedate, \fileversion}
+% \maketitle
+% \begin{abstract}
+%   This package provides \LaTeX{} support for the Adobe Caslon
+%   Fonts. It has
+%   everything you need to typeset in this font - except the fonts
+%   themselves.
+% \end{abstract}
+% \tableofcontents
+%
+% \clearpage
+%
+%
+%\section{Introduction}
+%\label{sec:intro}
+%
+% While such engines as \texttt{xetex} and \texttt{luatex} can use
+% native system fonts, the installation base of \texttt{pdftex} is
+% large enough to justify its continuing support with new fonts.  
+%
+%
+% This package provides support files for the Adobe Caslon font family
+% from Adobe.  According to the Fontname scheme~\cite{fontname}, this
+% corresponds to the family |pac|.  We provide the necessary font
+% files---everything but the fonts.  
+%
+%
+%
+%\section{Installation}
+%\label{sec:install}
+%
+%
+%
+% First, you need to purchase the fonts themselves: the |pfb| files
+% are \emph{not} included in the package.  If you got the fonts from
+% Adobe, do not rename the |pfb| files.  However, if
+% there are uppercase letters in your file names, downcase them.  If
+% you obtained the files from another source, rename the fonts
+% according to Table~\ref{tab:PFB}.  If your \TeX{} system is
+% TDS-compliant, install the files into
+% \path{$TEXMF/fonts/type1/adobe/adobecaslon}. Download
+% \url{http://ctan.tug.org/install/fonts/psfonts/adobe/adobecaslon.tds.zip}
+% and unzip this file in \path{$TEXMF}.  Add |+pac.map| to the
+% configuration files of dvips, pdftex and your dvi previewer.
+%
+% Install the files |*.fd| and |*.sty| in \path{$TEXMF/tex/latex/adobecaslon}.
+% and documentation (|*.pdf| and |README|) in
+% \path{$TEXMF/doc/latex/adobecaslon}. 
+%  
+% Run updmap and texhash programs to update the configuration files
+% and file names database.
+%
+%
+%
+% \begin{table}[tp]
+%   \centering
+%   \caption{PFB Files}
+%   \label{tab:PFB}
+%
+%   \begin{tabular}{ll}
+%     \toprule
+%    File  &  Font \\
+%    \midrule
+% |awrg____.pfb| & Adobe Caslon Regular\\
+% |awi_____.pfb| & Adobe Caslon Italic \\
+% |awsb____.pfb| & Adobe Caslon Semibold \\
+% |awsbi___.pfb| & Adobe Caslon Semibold Italic \\
+% |awb_____.pfb| & Adobe Caslon Bold\\
+% |awbi____.pfb| & Adobe Caslon Bold Italic\\
+%    \bottomrule
+%   \end{tabular}
+%
+% \end{table}
+%
+%
+% The style |adobecaslon.sty| provides a number of commands for using the
+% font family (see Section~\ref{sec:adobecaslon.sty})
+%
+%
+%\section{Using \LaTeX{} Style }
+%\label{sec:adobecaslon.sty}
+%
+% To use the package, add to the preamble of your document the usual
+% incantation \cmd{\usepackage}\oarg{options}|{adobecaslon}|.
+%
+%
+% The package supports several options.  The option |rmdefault| makes
+% Adobe Caslon your default Roman family.  The option |normdefault|
+% does not do this.  The options |scaled=...| scales Adobe fonts to
+% the given scale.
+%
+% The package provides Adobe fonts in two shapes: upright and italic,
+% and in three weights: medium (|m|), semibold (|sb|) and bold (|b|).
+% The can be selected in the usual way, for example
+% \begin{verbatim}
+% \fontfamily{pac}\fontshape{it}\fontseries{sb}\selectfont
+% \end{verbatim}
+%
+% \DescribeMacro{\adobecaslonfamily}
+% \DescribeMacro{\textadobecaslon}
+% Alternatively you can use a declaration |\adobecaslonfamily| and a
+% command |\textadobecaslon| to set the family.  
+
+%
+% \DescribeMacro{\sbseries}
+% \DescribeMacro{\textsb}
+% You can use the standard \LaTeX{} commands to select the shape and
+% weight of the font.  The package also provides a new declaration
+% |\sbseries| and a command 
+% |\textsb| modeled after the familiar commands |\bfseries| and
+% |\textbf|, which select semi-bold weights.  
+%
+% \StopEventually{
+%   \clearpage
+%
+%   \bibliography{adobecaslon}
+%   \bibliographystyle{unsrt}}
+%
+% \clearpage
+%\section{Implementation}
+%\label{sec:impl}
+%
+%\subsection{Identification}
+%\label{sec:ident}
+%
+% We start with the declaration who we are.  Most |.dtx| files put
+% driver code in a separate driver file |.drv|.  We roll this code into the
+% main file, and use the pseudo-guard |<gobble>| for it.
+%    \begin{macrocode}
+%<style>\NeedsTeXFormat{LaTeX2e}
+%<*gobble>
+\ProvidesFile{adobecaslon.dtx}
+%</gobble>
+%<style>\ProvidesClass{adobecaslon}
+%<pac-drv>\ProvidesFile{pac-drv.tex}
+%<pac-map>\ProvidesFile{pac-map.tex}
+[2012/06/05 v1.0 Using Adobe Caslon Font in LaTeX]
+%    \end{macrocode}
+% And the driver code:
+%    \begin{macrocode}
+%<*gobble>
+\documentclass{ltxdoc}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[tableposition=top]{caption}
+\usepackage{hypdoc}
+\PageIndex
+\CodelineIndex
+\RecordChanges
+\EnableCrossrefs
+\begin{document}
+  \DocInput{adobecaslon.dtx}
+\end{document}
+%</gobble> 
+%    \end{macrocode}
+%
+%
+%
+%\subsection{Fontinst Driver}
+%\label{sec:pac-drv}
+%
+% This follows~\cite{fontinstallationguide}.
+% 
+% First, the preamble
+%    \begin{macrocode}
+%<*pac-drv>
+\input fontinst.sty
+\substitutesilent{bx}{b}
+%    \end{macrocode}
+%  
+%
+% Starting recording transforms:
+%    \begin{macrocode}
+\recordtransforms{pac-rec.tex}
+%    \end{macrocode}
+% A bunch of fonts:
+%    \begin{macrocode}
+\transformfont{pacr8r}{\reencodefont{8r}{\fromafm{awrg____}}}
+\transformfont{pacri8r}{\reencodefont{8r}{\fromafm{awi_____}}}
+\transformfont{pacs8r}{\reencodefont{8r}{\fromafm{awsb____}}}
+\transformfont{pacsi8r}{\reencodefont{8r}{\fromafm{awsbi___}}}
+\transformfont{pacb8r}{\reencodefont{8r}{\fromafm{awb_____}}}
+\transformfont{pacbi8r}{\reencodefont{8r}{\fromafm{awbi____}}}
+%    \end{macrocode}
+%
+% There is no hook in |fontinst.sty| for writing our own preamble to
+% |.fd| file.  However, we need to add scaling commands to the
+% preamble. OK, we will patch fontinst:
+%    \begin{macrocode}
+\fontinstcc
+\def\fd_family#1#2#3{
+   \a_toks{#3}
+   \edef\lowercase_file{\lowercase{
+     \edef\noexpand\lowercase_file{#1#2.fd}}}
+   \lowercase_file
+   \open_out{\lowercase_file}
+   \out_line{\percent_char~Filename:~\lowercase_file}
+   \out_line{\percent_char~Created~by:~tex~\jobname}
+   \out_line{\percent_char~Created~using~fontinst~v\fontinstversion}
+   \out_line{}
+   \out_line{\percent_char~THIS~FILE~SHOULD~BE~PUT~IN~A~TEX~INPUTS~
+      DIRECTORY}
+   \out_line{}
+   \out_line{\string\ProvidesFile{\lowercase_file}}
+   \out_lline{[
+      \the\year/
+      \ifnum10>\month0\fi\the\month/
+      \ifnum10>\day0\fi\the\day\space
+      Fontinst~v\fontinstversion\space
+      font~definitions~for~#1/#2.
+   ]}
+   \out_line{}
+%    \end{macrocode}
+% Here is our patch:
+%    \begin{macrocode}
+   \out_line{\string\expandafter\string\ifx\string\csname\space
+     PAC@scale\string\endcsname\string\relax}
+   \out_line{\space\string\let\string\PAC@@scale\string\@empty}
+   \out_line{\string\else}
+   \out_line{\space\string\edef\string\PAC@@scale\left_brace_char 
+       s*[\string\csname\space PAC@scale\string\endcsname]
+       \right_brace_char\percent_char}
+   \out_line{\string\fi\percent_char}
+   \out_line{}
+%    \end{macrocode}
+% End of the patch.
+%    \begin{macrocode}
+   \out_line{\string\DeclareFontFamily{#1}{#2}{\the\a_toks}}
+   {
+      \csname #1-#2\endcsname
+      \out_line{}
+      \let\do_shape=\substitute_shape
+      \csname #1-#2\endcsname
+      \let\do_shape=\remove_shape
+      \csname #1-#2\endcsname
+   }
+   \x_cs\g_let{#1-#2}\x_relax
+   \out_line{}
+   \out_line{\string\endinput}
+   \close_out{Font~definitions}
+}
+\normalcc
+%    \end{macrocode}
+% 
+%
+% Now we install the fonts.  First T1
+%    \begin{macrocode}
+\installfonts
+\installfamily{T1}{pac}{}
+\installfont{pacr8t}{pacr8r,newlatin}{t1}{T1}{pac}{m}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacri8t}{pacri8r,newlatin}{t1}{T1}{pac}{m}{it}{
+  <->\string\PAC@@scale} 
+\installfont{pacs8t}{pacs8r,newlatin}{t1}{T1}{pac}{sb}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacsi8t}{pacsi8r,newlatin}{t1}{T1}{pac}{sb}{it}{
+  <->\string\PAC@@scale} 
+\installfont{pacb8t}{pacb8r,newlatin}{t1}{T1}{pac}{b}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacbi8t}{pacbi8r,newlatin}{t1}{T1}{pac}{b}{it}{
+  <->\string\PAC@@scale} 
+\endinstallfonts
+%    \end{macrocode}
+%
+%
+% Then TS1
+%    \begin{macrocode}
+\installfonts
+\installfamily{TS1}{pac}{}
+\installfont{pacr8c}{pacr8r,textcomp}{ts1}{TS1}{pac}{m}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacri8c}{pacri8r,textcomp}{ts1}{TS1}{pac}{m}{it}{
+  <->\string\PAC@@scale} 
+\installfont{pacs8c}{pacs8r,textcomp}{ts1}{TS1}{pac}{sb}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacsi8c}{pacsi8r,textcomp}{ts1}{TS1}{pac}{sb}{it}{
+  <->\string\PAC@@scale} 
+\installfont{pacb8c}{pacb8r,textcomp}{ts1}{TS1}{pac}{b}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacbi8c}{pacbi8r,textcomp}{ts1}{TS1}{pac}{b}{it}{
+  <->\string\PAC@@scale} 
+\endinstallfonts
+%    \end{macrocode}
+% 
+% 
+% And  OT1
+%    \begin{macrocode}
+\installfonts
+\installfamily{OT1}{pac}{}
+\installfont{pacr7t}{pacr8r,newlatin}{ot1}{OT1}{pac}{m}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacri7t}{pacri8r,newlatin}{ot1}{OT1}{pac}{m}{it}{
+  <->\string\PAC@@scale} 
+\installfont{pacs7t}{pacs8r,newlatin}{ot1}{OT1}{pac}{sb}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacsi7t}{pacsi8r,newlatin}{ot1}{OT1}{pac}{sb}{it}{
+  <->\string\PAC@@scale} 
+\installfont{pacb7t}{pacb8r,newlatin}{ot1}{OT1}{pac}{b}{n}{
+  <->\string\PAC@@scale} 
+\installfont{pacbi7t}{pacbi8r,newlatin}{ot1}{OT1}{pac}{b}{it}{
+  <->\string\PAC@@scale} 
+\endinstallfonts
+%    \end{macrocode}
+%
+%
+% And the end:
+%    \begin{macrocode}
+\endrecordtransforms
+\bye
+%</pac-drv>
+%    \end{macrocode}
+%
+%\subsection{Fontmap Generation}
+%\label{sec:fontmap}
+%
+% This is a standard procedure~\cite{fontinstallationguide}
+%    \begin{macrocode}
+%<*pac-map>
+\input finstmsc.sty
+\resetstr{PSfontsuffix}{.pfb}
+\adddriver{dvips}{pac.map}
+\input pac-rec.tex
+\donedrivers
+\bye
+%</pac-map>
+%    \end{macrocode}
+%
+%
+%
+%\subsection{Style File}
+%\label{sec:style}
+%
+%
+% The scaling code is from the |helvet| package:
+%    \begin{macrocode}
+%<*style>
+\newif\ifPAC@default
+\PAC@defaultfalse
+\RequirePackage{keyval}
+\define@key{PAC}{scaled}[1.00]{%
+  \def\PAC@scale{#1}}
+\define@key{PAC}{rmdefault}[1]{\PAC@defaulttrue}
+\define@key{PAC}{normdefault}[1]{\PAC@defaultfalse}
+\def\ProcessOptionsWithKV#1{%
+  \let\@tempc\relax
+  \let\PAC@tempa\@empty
+  \ifx\@classoptionslist\relax\else
+    \@for\CurrentOption:=\@classoptionslist\do{%
+      \@ifundefined{KV@#1@\CurrentOption}%
+      {}%
+      {%
+        \edef\PAC@tempa{\PAC@tempa,\CurrentOption,}%
+        \@expandtwoargs\@removeelement\CurrentOption
+          \@unusedoptionlist\@unusedoptionlist
+      }%
+    }%
+  \fi
+  \edef\PAC@tempa{%
+    \noexpand\setkeys{#1}{%
+      \PAC@tempa\@ptionlist{\@currname.\@currext}%
+    }%
+  }%
+  \PAC@tempa
+  \let\CurrentOption\@empty
+}
+\ProcessOptionsWithKV{PAC}
+\AtEndOfPackage{%
+  \let\@unprocessedoptions\relax
+}
+\ifPAC@default
+  \renewcommand{\rmdefault}{pac}
+\fi
+%    \end{macrocode}
+% 
+%
+% Some new commands:
+%    \begin{macrocode}
+\DeclareRobustCommand\adobecaslonfamily{\fontfamily{pac}\selectfont}
+\DeclareTextFontCommand{\textadobecaslon}{\adobecaslonfamily}
+\DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+%</style>
+%    \end{macrocode}
+% 
+%
+%\Finale
+%\clearpage
+%
+%\PrintChanges
+%\clearpage
+%\PrintIndex
+%
+\endinput
