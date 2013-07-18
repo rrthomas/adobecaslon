@@ -1,4 +1,10 @@
+*.fd
 *.log
+*.mtx
+*.pl
+*.vpl
+*.map
 /adobecaslon.sty
 /pac-drv.tex
 /pac-map.tex
+/pac-rec.tex
