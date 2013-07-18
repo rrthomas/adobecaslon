@@ -34,7 +34,7 @@
 % POSSIBILITY OF SUCH DAMAGE.
 %
 % \fi 
-% \CheckSum{299}
+% \CheckSum{143}
 %
 %
 %% \CharacterTable
@@ -55,7 +55,7 @@
 %
 %
 % \MakeShortVerb{|}
-% \GetFileInfo{adobecaslon.dtx}
+% \GetFileInfo{adobecaslon.sty}
 % \title{\LaTeX{} Support For Adobe Caslon Fonts}
 % \author{Boris Veytsman\thanks{%
 % \href{mailto:borisv@lk.net}{\texttt{borisv@lk.net}},
@@ -191,7 +191,8 @@
 %<*gobble>
 \ProvidesFile{adobecaslon.dtx}
 %</gobble>
-%<style>\ProvidesClass{adobecaslon}[2012/06/05 v1.0 Using Adobe Caslon Font in LaTeX]
+%<style>\ProvidesPackage{adobecaslon}
+%<style>   [2012/06/05 v1.0 Using Adobe Caslon Font in LaTeX]
 %    \end{macrocode}
 % And the driver code:
 %    \begin{macrocode}
@@ -201,6 +202,7 @@
 \usepackage{url}
 \usepackage[tableposition=top]{caption}
 \usepackage{hypdoc}
+\usepackage[normdefault]{adobecaslon}
 \PageIndex
 \CodelineIndex
 \RecordChanges
