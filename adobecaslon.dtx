@@ -34,7 +34,7 @@
 % POSSIBILITY OF SUCH DAMAGE.
 %
 % \fi 
-% \CheckSum{143}
+% \CheckSum{247}
 %
 %
 %% \CharacterTable
@@ -266,11 +266,11 @@
 % Here is our patch:
 %    \begin{macrocode}
    \out_line{\string\expandafter\string\ifx\string\csname\space
-     PAC@scale\string\endcsname\string\relax}
-   \out_line{\space\string\let\string\PAC@@scale\string\@empty}
+     adobecaslon@scaled\string\endcsname\string\relax}
+   \out_line{\space\string\let\string\adobecaslon@scaled\string\@empty}
    \out_line{\string\else}
-   \out_line{\space\string\edef\string\PAC@@scale\left_brace_char 
-       s*[\string\csname\space PAC@scale\string\endcsname]
+   \out_line{\space\string\edef\string\adobecaslon@scaled\left_brace_char 
+       s*[\string\csname\space adobecaslon@scaled\string\endcsname]
        \right_brace_char\percent_char}
    \out_line{\string\fi\percent_char}
    \out_line{}
@@ -300,17 +300,17 @@
 \installfonts
 \installfamily{T1}{pac}{}
 \installfont{pacr8t}{pacr8r,newlatin}{t1}{T1}{pac}{m}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacri8t}{pacri8r,newlatin}{t1}{T1}{pac}{m}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacs8t}{pacs8r,newlatin}{t1}{T1}{pac}{sb}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacsi8t}{pacsi8r,newlatin}{t1}{T1}{pac}{sb}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacb8t}{pacb8r,newlatin}{t1}{T1}{pac}{b}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacbi8t}{pacbi8r,newlatin}{t1}{T1}{pac}{b}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \endinstallfonts
 %    \end{macrocode}
 %
@@ -320,17 +320,17 @@
 \installfonts
 \installfamily{TS1}{pac}{}
 \installfont{pacr8c}{pacr8r,textcomp}{ts1}{TS1}{pac}{m}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacri8c}{pacri8r,textcomp}{ts1}{TS1}{pac}{m}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacs8c}{pacs8r,textcomp}{ts1}{TS1}{pac}{sb}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacsi8c}{pacsi8r,textcomp}{ts1}{TS1}{pac}{sb}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacb8c}{pacb8r,textcomp}{ts1}{TS1}{pac}{b}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacbi8c}{pacbi8r,textcomp}{ts1}{TS1}{pac}{b}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \endinstallfonts
 %    \end{macrocode}
 % 
@@ -340,17 +340,17 @@
 \installfonts
 \installfamily{OT1}{pac}{}
 \installfont{pacr7t}{pacr8r,newlatin}{ot1}{OT1}{pac}{m}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacri7t}{pacri8r,newlatin}{ot1}{OT1}{pac}{m}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacs7t}{pacs8r,newlatin}{ot1}{OT1}{pac}{sb}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacsi7t}{pacsi8r,newlatin}{ot1}{OT1}{pac}{sb}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacb7t}{pacb8r,newlatin}{ot1}{OT1}{pac}{b}{n}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \installfont{pacbi7t}{pacbi8r,newlatin}{ot1}{OT1}{pac}{b}{it}{
-  <->\string\PAC@@scale} 
+  <->\string\adobecaslon@scaled} 
 \endinstallfonts
 %    \end{macrocode}
 %
@@ -383,43 +383,15 @@
 %\label{sec:style}
 %
 %
-% The scaling code is from the |helvet| package:
+% Declare the package options:
 %    \begin{macrocode}
 %<*style>
-\newif\ifPAC@default
-\PAC@defaulttrue
-\RequirePackage{keyval}
-\define@key{PAC}{scaled}[1.00]{%
-  \def\PAC@scale{#1}}
-\define@key{PAC}{rmdefault}[1]{\PAC@defaulttrue}
-\define@key{PAC}{normdefault}[1]{\PAC@defaultfalse}
-\def\ProcessOptionsWithKV#1{%
-  \let\@tempc\relax
-  \let\PAC@tempa\@empty
-  \ifx\@classoptionslist\relax\else
-    \@for\CurrentOption:=\@classoptionslist\do{%
-      \@ifundefined{KV@#1@\CurrentOption}%
-      {}%
-      {%
-        \edef\PAC@tempa{\PAC@tempa,\CurrentOption,}%
-        \@expandtwoargs\@removeelement\CurrentOption
-          \@unusedoptionlist\@unusedoptionlist
-      }%
-    }%
-  \fi
-  \edef\PAC@tempa{%
-    \noexpand\setkeys{#1}{%
-      \PAC@tempa\@ptionlist{\@currname.\@currext}%
-    }%
-  }%
-  \PAC@tempa
-  \let\CurrentOption\@empty
-}
-\ProcessOptionsWithKV{PAC}
-\AtEndOfPackage{%
-  \let\@unprocessedoptions\relax
-}
-\ifPAC@default
+\RequirePackage{kvoptions}
+\DeclareBoolOption{rmdefault}
+\DeclareComplementaryOption{normdefault}{rmdefault}
+\DeclareStringOption[1.00]{scaled}
+\ProcessKeyvalOptions*
+\ifadobecaslon@rmdefault
   \renewcommand{\rmdefault}{pac}
 \fi
 %    \end{macrocode}
