@@ -176,20 +176,16 @@
 %\subsection{Identification}
 %\label{sec:ident}
 %
-% We start with the declaration who we are.  Most |.dtx| files put
-% driver code in a separate driver file |.drv|.  We roll this code into the
-% main file, and use the pseudo-guard |<gobble>| for it.
+% We start by declaring who we are.
 %    \begin{macrocode}
 %<style>\NeedsTeXFormat{LaTeX2e}
-%<*gobble>
-\ProvidesFile{adobecaslon.dtx}
-%</gobble>
+%<driver>\ProvidesFile{adobecaslon.dtx}
 %<style>\ProvidesPackage{adobecaslon}
 %<style>   [2012/06/05 v1.0 Using Adobe Caslon Font in LaTeX]
 %    \end{macrocode}
 % And the driver code:
 %    \begin{macrocode}
-%<*gobble>
+%<*driver>
 \documentclass{ltxdoc}
 \usepackage{booktabs}
 \usepackage{url}
@@ -203,7 +199,7 @@
 \begin{document}
   \DocInput{adobecaslon.dtx}
 \end{document}
-%</gobble> 
+%</driver>
 %    \end{macrocode}
 %
 %
