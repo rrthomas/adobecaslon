@@ -1,18 +1,19 @@
 \documentclass{article}
+\usepackage[T1]{fontenc}
 \usepackage{ifpdf}
 \ifpdf
    \pdfmapfile{+pac.map}
    \usepackage{microtype}
 \fi
-\usepackage{adobecaslon,textcomp}
+\usepackage{adobecaslon}
+\usepackage{textcomp}
 \usepackage{lipsum}
 \begin{document}
-
-\adobecaslonfamily
 
 Adobe Caslon Regular: 0123456789. fi, ffi. \lipsum[1]
 
 {\itshape Adobe Caslon Italic: 0123456789. fi, ffi. \lipsum[2]}
+
 
 {\sbseries
 Adobe Caslon Semibold: 0123456789. fi, ffi. \lipsum[3]
