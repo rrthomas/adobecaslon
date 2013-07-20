@@ -1,0 +1,141 @@
+--- t1a.etx	2013-08-04 22:59:32.300668010 +0100
++++ t1aa.etx	2013-08-04 23:10:54.008259972 +0100
+@@ -408,11 +408,23 @@
+       It is used to stop ligaturing in words like `shelf{}ful'.}
+ \endsetslot
+ 
+-\setslot{perthousandzero}
+-   \comment{A glyph which is placed after `\%' to produce a
+-      `per-thousand', or twice to produce `per-ten-thousand'.
+-      Your guess is as good as mine as to what this glyph should look
+-      like in a monowidth font.}
++% \setslot{perthousandzero}
++%    \comment{A glyph which is placed after `\%' to produce a
++%       `per-thousand', or twice to produce `per-ten-thousand'.
++%       Your guess is as good as mine as to what this glyph should look
++%       like in a monowidth font.}
++% \endsetslot
++\setslot{longdbls}
++ \ligature{LIG}{visiblespace}{germandbls}
++ \ligature{LIG/}{comma}{germandbls}
++ \ligature{LIG/}{period}{germandbls}
++ \ligature{LIG/}{colon}{germandbls}
++ \ligature{LIG/}{semicolon}{germandbls}
++ \ligature{LIG/}{question}{germandbls}
++ \ligature{LIG/}{exclam}{germandbls}
++ \ligature{LIG/}{parenright}{germandbls}
++ \ligature{LIG/}{quoteright}{germandbls}
++   \comment{The ligature `long s' `long s'.}
+ \endsetslot
+ 
+ \setslot{\lc{dotlessI}{dotlessi}}
+@@ -420,9 +432,12 @@
+       `\=\i'.}
+ \endsetslot
+ 
+-\setslot{\lc{dotlessJ}{dotlessj}}
+-   \comment{A dotless j `\j', used to produce accented letters such as
+-      `\=\j'.  Most non-\TeX\ fonts do not have this glyph.}
++% \setslot{\lc{dotlessJ}{dotlessj}}
++%    \comment{A dotless j `\j', used to produce accented letters such as
++%       `\=\j'.  Most non-\TeX\ fonts do not have this glyph.}
++% \endsetslot
++\setslot{longsl}
++   \comment{The ligature `long s' `{l}'.}
+ \endsetslot
+ 
+ \ifnumber{\int{ligaturing}}<{0}\then \skipslots{5}\Else
+@@ -459,6 +474,7 @@
+ \Fi
+ 
+ \setslot{visiblespace}
++   \makerightboundary{rightboundarychar}
+    \comment{A visible space glyph `\textvisiblespace'.}
+ \endsetslot
+ 
+@@ -467,12 +483,15 @@
+    \comment{The exclamation mark `!'.}
+ \endsetslot
+ 
+-\setslot{quotedbl}
+-  \comment{The `neutral' double quotation mark `\,\textquotedbl\,',
+-      included for use in monowidth fonts, or for setting computer
+-      programs.  Note that the inclusion of this glyph in this slot
+-      means that \TeX\ documents which used `{\tt\char`\"}' as an
+-      input character will no longer work.}
++% \setslot{quotedbl}
++%   \comment{The `neutral' double quotation mark `\,\textquotedbl\,',
++%       included for use in monowidth fonts, or for setting computer
++%       programs.  Note that the inclusion of this glyph in this slot
++%       means that \TeX\ documents which used `{\tt\char`\"}' as an
++%       input character will no longer work.}
++% \endsetslot
++\setslot{longsi}
++   \comment{The ligature `long s' `{i}'.}
+ \endsetslot
+ 
+ \setslot{numbersign}
+@@ -585,8 +604,12 @@
+    \comment{The less-than sign `\textless'.}
+ \endsetslot
+ 
+-\setslot{equal}
+-   \comment{The equals sign `='.}
++% \setslot{equal}
++%    \comment{The equals sign `='.}
++% \endsetslot
++\setslot{\lc{S}{s}}
++   \ligature{LIG}{\lc{T}{t}}{st}
++   \comment{The letter `{s}'.}
+ \endsetslot
+ 
+ \setslot{greater}
+@@ -773,6 +796,7 @@
+          \ligature{LIG}{\lc{I}{i}}{\lclig{FI}{fi}}
+          \ligature{LIG}{\lc{F}{f}}{\lclig{FF}{ff}}
+          \ligature{LIG}{\lc{L}{l}}{\lclig{FL}{fl}}
++         \ligature{LIG/}{\lc{S}{longs}}{\lc{S}{s}}
+       \Fi
+       \comment{The letter `{f}'.}
+    \endsetslot
+@@ -831,14 +855,32 @@
+    \comment{The letter `{r}'.}
+ \endsetslot
+ 
+-\ifnumber{\int{ligaturing}}<{-1}\then \skipslots{1}\Else
+-
+-   \setslot{\lc{S}{s}}
+-      \ligature{LIG}{\lc{T}{t}}{st}
+-      \comment{The letter `{s}'.}
+-   \endsetslot
+-
+-\Fi
++% \ifnumber{\int{ligaturing}}<{-1}\then \skipslots{1}\Else
++%
++%    \setslot{\lc{S}{s}}
++%       \comment{The letter `{s}'.}
++%    \endsetslot
++%
++% \Fi
++\setslot{\lc{S}{longs}}
++   \ligature{LIG}{visiblespace}{\lc{S}{s}}
++   \ligature{LIG}{\lc{S}{s}}{germandbls}
++   \ligature{LIG}{\lc{S}{longs}}{longdbls}
++   \ligature{LIG}{\lc{H}{h}}{longsh}
++   \ligature{LIG}{\lc{I}{i}}{longsi}
++   \ligature{LIG}{\lc{L}{l}}{longsl}
++   \ligature{LIG}{\lc{T}{t}}{longst}
++   \ligature{LIG/}{comma}{\lc{S}{s}}
++   \ligature{LIG/}{period}{\lc{S}{s}}
++   \ligature{LIG/}{colon}{\lc{S}{s}}
++   \ligature{LIG/}{semicolon}{\lc{S}{s}}
++   \ligature{LIG/}{question}{\lc{S}{s}}
++   \ligature{LIG/}{exclam}{\lc{S}{s}}
++   \ligature{LIG/}{parenright}{\lc{S}{s}}
++   \ligature{LIG/}{quoteright}{\lc{S}{s}}
++   \ligature{LIG/}{\lc{F}{f}}{\lc{S}{s}}
++   \comment{The letter `long s'.}
++\endsetslot
+ 
+ \setslot{\lc{T}{t}}
+    \comment{The letter `{t}'.}

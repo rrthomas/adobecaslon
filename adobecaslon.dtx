@@ -33,8 +33,8 @@
 % OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 % POSSIBILITY OF SUCH DAMAGE.
 %
+% \CheckSum{337} (N.B. reactivate checksum for production)
 % \fi 
-% \CheckSum{247}
 %
 %
 %% \CharacterTable
@@ -96,7 +96,8 @@
 % Adobe, do not rename the |pfb| files.  However, if
 % there are uppercase letters in your file names, downcase them.  If
 % you obtained the files from another source, rename the fonts
-% according to Table~\ref{tab:PFB}.  Install the files into
+% according to Table~\ref{tab:PFB} and, if you have the expert fonts,
+% Table~\ref{tab:expertPFB}.  Install the files into
 % \path{$TEXMF/fonts/type1/adobe/adobecaslon}.
 %
 % Then, download
@@ -128,6 +129,47 @@
 %
 % \end{table}
 %
+% \begin{table}[tp]
+%   \centering
+%   \caption{Expert PFB Files}
+%   \label{tab:expertPFB}
+%
+%   \begin{tabular}{ll}
+%     \toprule
+%    File  &  Font \\
+%    \midrule
+% |awab____.pfb| & Adobe Caslon Bold Alternate\\
+% |awabi___.pfb| & Adobe Caslon Bold Italic Alternate\\
+% |awai____.pfb| & Adobe Caslon Italic Alternate\\
+% |awarg___.pfb| & Adobe Caslon Regular Alternate\\
+% |awasb___.pfb| & Adobe Caslon Semibold Alternate\\
+% |awasi___.pfb| & Adobe Caslon Semibold Italic Alternate\\
+% |awb_____.pfb| & Adobe Caslon Bold\\
+% |awbi____.pfb| & Adobe Caslon Bold Italic\\
+% |awi_____.pfb| & Adobe Caslon Italic\\
+% |awor____.pfb| & Adobe Caslon Ornaments\\
+% |awrg____.pfb| & Adobe Caslon Regular\\
+% |awsb____.pfb| & Adobe Caslon Semibold\\
+% |awsbi___.pfb| & Adobe Caslon Semibold Italic\\
+% |awsbs___.pfb| & Adobe Caslon SemiboldSC\\
+% |awsc____.pfb| & Adobe Caslon Regular Small Caps \& Oldstyle Figures\\
+% |awssb___.pfb| & Adobe Caslon Swash Semibold Italic\\
+% |awswb___.pfb| & Adobe Caslon Swash Bold Italic\\
+% |awswi___.pfb| & Adobe Caslon Swash Italic\\
+% |axb_____.pfb| & Adobe Caslon Bold Expert\\
+% |axbi____.pfb| & Adobe Caslon Bold Italic Expert\\
+% |axi_____.pfb| & Adobe Caslon Italic Expert\\
+% |axrg____.pfb| & Adobe Caslon Regular Expert\\
+% |axsb____.pfb| & Adobe Caslon Semibold Expert\\
+% |axsbi___.pfb| & Adobe Caslon Semibold Italic Expert\\
+% |awbio___.pfb| & Adobe Caslon Bold Italic OsF\\
+% |awbos___.pfb| & Adobe Caslon Bold OsF\\
+% |awio____.pfb| & Adobe Caslon Italic OsF\\
+% |awsis___.pfb| & Adobe Caslon Semibold Italic OsF\\
+%    \bottomrule
+%   \end{tabular}
+%
+% \end{table}
 %
 % The style |adobecaslon.sty| provides a number of commands for using the
 % font family (see Section~\ref{sec:adobecaslon.sty}).
@@ -139,9 +181,34 @@
 % To use the package, add to the preamble of your document the usual
 % incantation \cmd{\usepackage}\oarg{options}|{adobecaslon}|.
 %
-% By default, Adobe Caslon is made the default roman font (option
-% |rmdefault|). The option |normdefault| prevents this.
-% The option |scaled=...| scales Adobe fonts to the given scale.
+% Several options are defined; see Table~\ref{tab:options}
+% \begin{table}[tp]
+%   \centering
+%   \caption{Package options}
+%   \label{tab:options}
+%
+%   \begin{tabular}{ll}
+%     \toprule
+% Option        & Meaning \\
+%    \midrule
+% |expert|      & Use expert fonts \\
+% |osf|         & Use old-style (ranging) figures (requires expert fonts) \\
+% |swashit|     & Use swash italics (requires expert fonts) \\
+% |alternate|   & Use alternate old-style ligatures (requires expert fonts) \\
+% |longs|       & Use long `s' (requires expert fonts) \\
+% |swashlongs|  & Use long `s' with swashes (requires expert fonts) \\
+% |normdefault| & Don't make Caslon the default roman typeface (forces |bold|) \\
+% |rmdefault|   & Make Caslon the default roman typeface (default) \\
+% |scaled=N|    & Scale the font by the given factor (default: $1.00$) \\
+% |bold|        & Use bold faces for |\bfseries| \\
+% |semibold|    & Use semibold faces for |\bfseries| (default) \\
+%    \bottomrule
+%   \end{tabular}
+%
+% \end{table}
+%
+% Note that the |scaled| package option does not currently apply to
+% the italic swash and ornament fonts.
 %
 % The package provides Adobe fonts in two shapes: upright and italic,
 % and in three weights: medium (|m|), semibold (|sb|) and bold (|b|).
@@ -162,6 +229,28 @@
 % |\sbseries| and a command 
 % |\textsb| modeled after the familiar commands |\bfseries| and
 % |\textbf|, which select semi-bold weights.  
+%
+% \DescribeMacro{\adobecaslonexpert}
+% Select expert fonts.
+%
+% \DescribeMacro{\adobecaslonosf}
+% Select expert fonts with old-style (ranging) figures.
+%
+% \DescribeMacro{\adobecaslonalternate}
+% Select old-style alternate ligatures.
+%
+% \DescribeMacro{\adobecaslonlongs}
+% Select long `s'.
+%
+% \DescribeMacro{\adobecaslonswashit}
+% Select swash italics.
+%
+% \DescribeMacro{\adobecaslonswashcaps}
+% Select swash caps.
+%
+% \DescribeMacro{\adobecaslonornaments}
+% Select ornaments.
+%
 %
 % \StopEventually{
 %   \clearpage
@@ -211,7 +300,7 @@
 % 
 % First, the preamble
 %    \begin{macrocode}
-%<*pac-drv>
+%<*pac-drv,pac-expert-drv>
 \input fontinst.sty
 \substitutesilent{bx}{b}
 %    \end{macrocode}
@@ -220,9 +309,11 @@
 % Starting recording transforms:
 %    \begin{macrocode}
 \recordtransforms{pac-rec.tex}
+%</pac-drv,pac-expert-drv>
 %    \end{macrocode}
-% A bunch of fonts:
+% The base fonts:
 %    \begin{macrocode}
+%<*pac-drv,pac-expert-drv>
 \transformfont{pacr8r}{\reencodefont{8r}{\fromafm{awrg____}}}
 \transformfont{pacri8r}{\reencodefont{8r}{\fromafm{awi_____}}}
 \transformfont{pacs8r}{\reencodefont{8r}{\fromafm{awsb____}}}
@@ -230,11 +321,48 @@
 \transformfont{pacb8r}{\reencodefont{8r}{\fromafm{awb_____}}}
 \transformfont{pacbi8r}{\reencodefont{8r}{\fromafm{awbi____}}}
 %    \end{macrocode}
+%</pac-drv,pac-expert-drv>
+%
+% The use of expert fonts is optional, so we have a separate driver for them:
+%    \begin{macrocode}
+%<*pac-expert-drv>
+\transformfont{pacb7a}{\fromafm{awab____}}
+\transformfont{pacbi7a}{\fromafm{awabi___}}
+\transformfont{pacri7a}{\fromafm{awai____}}
+\transformfont{pacr7a}{\fromafm{awarg___}}
+\transformfont{pacs7a}{\fromafm{awasb___}}
+\transformfont{pacsi7a}{\fromafm{awasi___}}
+\transformfont{pacrp}{\fromafm{awor____}}
+\transformfont{pacsc8x}{\fromafm{awsbs___}}
+\transformfont{pacrc8x}{\fromafm{awsc____}}
+\transformfont{pacsiw}{\fromafm{awssb___}}
+\transformfont{pacbiw}{\fromafm{awswb___}}
+\transformfont{pacriw}{\fromafm{awswi___}}
+\transformfont{pacb8x}{\fromafm{axb_____}}
+\transformfont{pacbi8x}{\fromafm{axbi____}}
+\transformfont{pacri8x}{\fromafm{axi_____}}
+\transformfont{pacr8x}{\fromafm{axrg____}}
+\transformfont{pacs8x}{\fromafm{axsb____}}
+\transformfont{pacsi8x}{\fromafm{axsbi___}}
+%    \end{macrocode}
+%
+% Make oblique fonts for faking italic small caps:
+%
+%    \begin{macrocode}
+\transformfont{pacro8r}{\slantfont{167}{\frommtx{pacr8r}}}
+\transformfont{pacro8x}{\slantfont{167}{\frommtx{pacr8x}}}
+\transformfont{pacrco8x}{\slantfont{167}{\frommtx{pacrc8x}}}
+\transformfont{pacso8r}{\slantfont{167}{\frommtx{pacs8r}}}
+\transformfont{pacso8x}{\slantfont{167}{\frommtx{pacs8x}}}
+\transformfont{pacsco8x}{\slantfont{167}{\frommtx{pacsc8x}}}
+%</pac-expert-drv>
+%    \end{macrocode}
 %
 % There is no hook in |fontinst.sty| for writing our own preamble to
 % |.fd| file.  However, we need to add scaling commands to the
 % preamble. OK, we will patch fontinst:
 %    \begin{macrocode}
+%<*pac-drv,pac-expert-drv>
 \fontinstcc
 \def\fd_family#1#2#3{
    \a_toks{#3}
@@ -289,73 +417,140 @@
 }
 \normalcc
 %    \end{macrocode}
-% 
 %
-% Now we install the fonts.  First T1
+% Now we install the fonts.  First T1:
 %    \begin{macrocode}
 \installfonts
 \installfamily{T1}{pac}{}
-\installfont{pacr8t}{pacr8r,newlatin}{t1}{T1}{pac}{m}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacri8t}{pacri8r,newlatin}{t1}{T1}{pac}{m}{it}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacs8t}{pacs8r,newlatin}{t1}{T1}{pac}{sb}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacsi8t}{pacsi8r,newlatin}{t1}{T1}{pac}{sb}{it}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacb8t}{pacb8r,newlatin}{t1}{T1}{pac}{b}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacbi8t}{pacbi8r,newlatin}{t1}{T1}{pac}{b}{it}{
-  <->\string\adobecaslon@scaled} 
+\installfont{pacr8t}{pacr8r,newlatin}{t1}{T1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacri8t}{pacri8r,newlatin}{t1}{T1}{pac}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacs8t}{pacs8r,newlatin}{t1}{T1}{pac}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsi8t}{pacsi8r,newlatin}{t1}{T1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacb8t}{pacb8r,newlatin}{t1}{T1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbi8t}{pacbi8r,newlatin}{t1}{T1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
 \endinstallfonts
 %    \end{macrocode}
 %
-%
-% Then TS1
+% Then TS1:
 %    \begin{macrocode}
 \installfonts
 \installfamily{TS1}{pac}{}
-\installfont{pacr8c}{pacr8r,textcomp}{ts1}{TS1}{pac}{m}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacri8c}{pacri8r,textcomp}{ts1}{TS1}{pac}{m}{it}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacs8c}{pacs8r,textcomp}{ts1}{TS1}{pac}{sb}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacsi8c}{pacsi8r,textcomp}{ts1}{TS1}{pac}{sb}{it}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacb8c}{pacb8r,textcomp}{ts1}{TS1}{pac}{b}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacbi8c}{pacbi8r,textcomp}{ts1}{TS1}{pac}{b}{it}{
-  <->\string\adobecaslon@scaled} 
+\installfont{pacr8c}{pacr8r,textcomp}{ts1}{TS1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacri8c}{pacri8r,textcomp}{ts1}{TS1}{pac}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacs8c}{pacs8r,textcomp}{ts1}{TS1}{pac}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsi8c}{pacsi8r,textcomp}{ts1}{TS1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacb8c}{pacb8r,textcomp}{ts1}{TS1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbi8c}{pacbi8r,textcomp}{ts1}{TS1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
 \endinstallfonts
 %    \end{macrocode}
 % 
-% 
-% And  OT1
+% And OT1:
 %    \begin{macrocode}
 \installfonts
 \installfamily{OT1}{pac}{}
-\installfont{pacr7t}{pacr8r,newlatin}{ot1}{OT1}{pac}{m}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacri7t}{pacri8r,newlatin}{ot1}{OT1}{pac}{m}{it}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacs7t}{pacs8r,newlatin}{ot1}{OT1}{pac}{sb}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacsi7t}{pacsi8r,newlatin}{ot1}{OT1}{pac}{sb}{it}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacb7t}{pacb8r,newlatin}{ot1}{OT1}{pac}{b}{n}{
-  <->\string\adobecaslon@scaled} 
-\installfont{pacbi7t}{pacbi8r,newlatin}{ot1}{OT1}{pac}{b}{it}{
-  <->\string\adobecaslon@scaled} 
+\installfont{pacr7t}{pacr8r,newlatin}{ot1}{OT1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacri7t}{pacri8r,newlatin}{ot1}{OT1}{pac}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacs7t}{pacs8r,newlatin}{ot1}{OT1}{pac}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsi7t}{pacsi8r,newlatin}{ot1}{OT1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacb7t}{pacb8r,newlatin}{ot1}{OT1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbi7t}{pacbi8r,newlatin}{ot1}{OT1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
 \endinstallfonts
 %    \end{macrocode}
 %
+% Now the expert fonts, which we make available only in T1 encoding.
+%<*pac-expert-drv>
+%    \begin{macrocode}
+\installfonts
+%    \end{macrocode}
 %
-% And the end:
+% First, the \texttt{expert} option:
+%    \begin{macrocode}
+\installfamily{T1}{pacx}{}
+\installfont{pacr9e}{pacr8r,pacr8x,newlatin}{t1}{T1}{pacx}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacro9e}{pacro8r,pacro8x,newlatin}{t1}{T1}{pacx}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrc9e}{pacrc8x,pacr8x,newlatin}{t1}{T1}{pacx}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrco9e}{pacrco8x,pacro8x,newlatin}{t1}{T1}{pacx}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacri9e}{pacri8r,pacri8x,newlatin}{t1}{T1}{pacx}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacs9e}{pacs8r,pacs8x,newlatin}{t1}{T1}{pacx}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacso9e}{pacso8r,pacso8x,newlatin}{t1}{T1}{pacx}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacsc9e}{pacsc8x,pacs8x,newlatin}{t1}{T1}{pacx}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacsco9e}{pacsco8x,pacso8x,newlatin}{t1}{T1}{pacx}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsi9e}{pacsi8r,pacsi8x,newlatin}{t1}{T1}{pacx}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacb9e}{pacb8r,pacb8x,newlatin}{t1}{T1}{pacx}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbi9e}{pacbi8r,pacbi8x,newlatin}{t1}{T1}{pacx}{b}{it}{ <->\string\adobecaslon@scaled}
+
+\installfamily{TS1}{pacx}{}
+\installfont{pacr9c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{pacx}{m}{n}{}
+\installfont{pacro9c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{pacx}{m}{sl}{}
+\installfont{pacri9c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{pacx}{m}{it}{}
+\installfont{pacs9c}{pacs8r,pacs8x,textcomp}{ts1}{TS1}{pacx}{sb}{n}{}
+\installfont{pacso9c}{pacso8r,pacso8x,textcomp}{ts1}{TS1}{pacx}{sb}{sl}{}
+\installfont{pacsi9c}{pacsi8r,pacsi8x,textcomp}{ts1i}{TS1}{pacx}{sb}{it}{}
+\installfont{pacb9c}{pacb8r,pacb8x,textcomp}{ts1}{TS1}{pacx}{b}{n}{}
+\installfont{pacbi9c}{pacbi8r,pacbi8x,textcomp}{ts1i}{TS1}{pacx}{b}{it}{}
+%     \end{macrocode}
+%
+% The \texttt{osf} option:
+%    \begin{macrocode}
+\installfamily{T1}{pacj}{}
+\installfont{pacr9d}{pacr8r,pacr8x,newlatin}{t1j}{T1}{pacj}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacro9d}{pacro8r,pacro8x,newlatin}{t1j}{T1}{pacj}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrc9d}{pacrc8x,pacr8x,newlatin}{t1j}{T1}{pacj}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrco9d}{pacrco8x,pacro8x,newlatin}{t1j}{T1}{pacj}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacri9d}{pacri8r,pacri8x,newlatin}{t1j}{T1}{pacj}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacs9d}{pacs8r,pacs8x,newlatin}{t1j}{T1}{pacj}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacso9d}{pacso8r,pacso8x,newlatin}{t1j}{T1}{pacj}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacsc9d}{pacsc8x,pacs8x,newlatin}{t1j}{T1}{pacj}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacsco9d}{pacsco8x,pacso8x,newlatin}{t1j}{T1}{pacj}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsi9d}{pacsi8r,pacsi8x,newlatin}{t1j}{T1}{pacj}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacb9d}{pacb8r,pacb8x,newlatin}{t1j}{T1}{pacj}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbi9d}{pacbi8r,pacbi8x,newlatin}{t1j}{T1}{pacj}{b}{it}{ <->\string\adobecaslon@scaled}
+%    \end{macrocode}
+%
+% The \texttt{alternate} option:
+%    \begin{macrocode}
+\installfamily{T1}{paca}{}
+\installfont{pacra9d}{pacr8r,pacr7a,pacr8x,newlatina}{t1aj}{T1}{paca}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacroa9d}{pacro8r,pacro8x,newlatina}{t1aj}{T1}{paca}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrca9d}{pacrc8x,pacr8x,newlatina}{t1aj}{T1}{paca}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoa9d}{pacrco8x,pacro8x,newlatina}{t1aj}{T1}{paca}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacria9d}{pacri8r,pacri7a,pacri8x,newlatina}{t1aj}{T1}{paca}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacsa9d}{pacs8r,pacs7a,pacs8x,newlatina}{t1aj}{T1}{paca}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsoa9d}{pacso8r,pacso8x,newlatina}{t1aj}{T1}{paca}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacsca9d}{pacsc8x,pacs8x,newlatina}{t1aj}{T1}{paca}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoa9d}{pacsco8x,pacso8x,newlatina}{t1aj}{T1}{paca}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsia9d}{pacsi8r,pacsi7a,pacsi8x,newlatina}{t1aj}{T1}{paca}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacba9d}{pacb8r,pacb7a,pacb8x,newlatina}{t1aj}{T1}{paca}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbia9d}{pacbi8r,pacbi7a,pacbi8x,newlatina}{t1aj}{T1}{paca}{b}{it}{ <->\string\adobecaslon@scaled}
+%    \end{macrocode}
+%
+% The \texttt{longs} option:
+%    \begin{macrocode}
+\installfamily{T1}{pacaa}{}
+\installfont{pacraa9d}{pacr8r,pacr7a,pacr8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacroaa9d}{pacro8r,pacro8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaa9d}{pacrc8x,pacr8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaa9d}{pacrco8x,pacro8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacriaa9d}{pacri8r,pacri7a,pacri8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacsaa9d}{pacs8r,pacs7a,pacs8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsoaa9d}{pacso8r,pacso8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaa9d}{pacsc8x,pacs8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaa9d}{pacsco8x,pacso8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsiaa9d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacbaa9d}{pacb8r,pacb7a,pacb8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbiaa9d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{it}{ <->\string\adobecaslon@scaled}
+%    \end{macrocode}
+%
+% End the expert fonts installation:
+%    \begin{macrocode}
+\endinstallfonts
+%    \end{macrocode}
+%</pac-expert-drv>
+% End the driver:
 %    \begin{macrocode}
 \endrecordtransforms
 \bye
-%</pac-drv>
+%</pac-drv,pac-expert-drv>
 %    \end{macrocode}
 %
 %\subsection{Fontmap Generation}
@@ -373,7 +568,153 @@
 %</pac-map>
 %    \end{macrocode}
 %
+%\subsection{Metrics}
 %
+% Old-style ligatures on modern letters:
+%
+%<*newlatina>
+%    \begin{macrocode}
+\relax
+
+\metrics
+
+\inputmtx{newlatin}
+
+%% Kerning
+
+\setleftkerning{st}{s}{1000}
+\setleftkerning{ct}{c}{1000}
+\setrightkerning{st}{t}{1000}
+\setrightkerning{ct}{t}{1000}
+
+%% Unfakable glyphs
+
+\unfakable{st}
+\unfakable{ct}
+
+\endmetrics
+%    \end{macrocode}
+%</newlatina>
+%
+% The `long s' variant.
+%
+%<*newlatinaa>
+%    \begin{macrocode}
+\relax
+
+\metrics
+
+\inputmtx{newlatina}
+
+%% Kerning
+
+\setleftkerning{longsh}{longs}{1000}
+\setrightkerning{longsh}{h}{1000}
+\setleftkerning{longsi}{longs}{1000}
+\setrightkerning{longsi}{i}{1000}
+\setleftkerning{longsl}{longs}{1000}
+\setrightkerning{longsl}{l}{1000}
+\setleftkerning{longst}{longs}{1000}
+\setrightkerning{longst}{t}{1000}
+\setleftrightkerning{longdbls}{longs}{1000}
+%% FIXME: these go in 18th-century option
+%% \setleftkerning{longdblsi}{longs}{1000}
+%% \setrightkerning{longdblsi}{i}{1000}
+%% \setleftkerning{longdblsl}{longs}{1000}
+%% \setrightkerning{longdblsl}{l}{1000}
+
+%% Unfakable glyphs
+
+\unfakable{longs}
+\unfakable{longsh}
+\unfakable{longsi}
+\unfakable{longsl}
+\unfakable{longst}
+\unfakable{longdbls}
+%% FIXME: these go in 18th-century option
+%%\unfakable{longdblsi}
+%%\unfakable{longdblsl}
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaa>
+%
+%\subsection{Encodings}
+%
+% The variant for old-style figures:
+%
+%    \begin{macrocode}
+%<*t1aj>
+\relax
+
+\encoding
+
+%% Define the parameters to produce a font with old-style figures
+\setcommand\digit#1{#1oldstyle}
+
+%% Then load t1a.etx
+\inputetx{t1a}
+
+\endencoding
+%</t1aj>
+%    \end{macrocode}
+%
+% The `long s' variant.
+%    \begin{macrocode}
+%<*t1aa>
+%% FIXME: This goes in c18th option
+%%\nextslot{24}
+%%\setslot{longdbls}
+%% \ligature{LIG}{visiblespace}{longss}
+%% FIXME: These go in extended option
+%% \ligature{LIG}{\lc{I}{i}}{longdblsi}
+%% \ligature{LIG}{\lc{l}{l}}{longdblsl}
+%%   \comment{The ligature `long s' `long s'.}
+%%\endsetslot
+
+%% FIXME: These two go in extended option
+%% \nextslot{95}
+%% \setslot{longdblsi}
+%%    \comment{The ligature `long s' `long s' `{i}'.}
+%% \endsetslot
+
+%%\nextslot{124}
+%%\setslot{longdblsl}
+%%   \comment{The ligature `long s' `long s' `{l}'.}
+%%\endsetslot
+
+%% FIXME: This goes in c18 option
+%% \nextslot{255}
+%% \setslot{longss} : actually need artificial ligature
+%%    \comment{The ligature `long s' `{s}'.}
+%% \endsetslot
+
+\endencoding
+%</t1aa>
+%    \end{macrocode}
+%
+% The `long s' variant with old-style figures.
+%
+%    \begin{macrocode}
+%<*t1aaj>
+\relax
+
+\encoding
+
+%% Define the parameters to produce a font with old-style figures
+\setcommand\digit#1{#1oldstyle}
+
+%% Then load t1aa.etx
+\inputetx{t1aa}
+
+\endencoding
+%</t1aaj>
+%    \end{macrocode}
+%
+%\subsection{Font definitions}
+%
+% We define the ornament and swash font encodings directly, in files
+% from Ulrik Vieth's \textsf{pacaslon} package.
 %
 %\subsection{Style File}
 %\label{sec:style}
@@ -383,14 +724,21 @@
 %    \begin{macrocode}
 %<*style>
 \RequirePackage{kvoptions}
-\DeclareBoolOption{rmdefault}
-\DeclareComplementaryOption{normdefault}{rmdefault}
+\def\f@ntsuffix{}
+\DeclareVoidOption{expert}{\def\f@ntsuffix{x}}
+\DeclareVoidOption{osf}{\def\f@ntsuffix{j}}
+\DeclareVoidOption{swashit}{\def\f@ntsuffix{w}}
+\DeclareVoidOption{alternate}{\def\f@ntsuffix{a}}
+\DeclareVoidOption{longs}{\def\f@ntsuffix{aa}}
+\DeclareVoidOption{swashlongs}{\def\f@ntsuffix{aaw}}
+\DeclareBoolOption{normdefault}
+\DeclareComplementaryOption{rmdefault}{normdefault}
 \DeclareStringOption[1.00]{scaled}
 \ProcessKeyvalOptions*
-\ifadobecaslon@rmdefault
-  \renewcommand{\rmdefault}{pac}
+\ifadobecaslon@normdefault\else
+  \renewcommand{\rmdefault}{pac\f@ntsuffix}
 \fi
-\DeclareVoidOption{semibold}{\def\bfdefault{sb}}
+\DeclareVoidOption{semibold}{\def\bfdefault{sb}} % FIXME: make this the default? (e.g. no bold small caps)
 %    \end{macrocode}
 % 
 %
@@ -400,6 +748,13 @@
 \DeclareTextFontCommand{\textadobecaslon}{\adobecaslonfamily}
 \DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
 \DeclareTextFontCommand{\textsb}{\sbseries}
+\DeclareRobustCommand\adobecaslonexpert{\fontfamily{pacx}\selectfont}
+\DeclareRobustCommand\adobecaslonosf{\fontfamily{pacj}\selectfont}
+\DeclareRobustCommand\adobecaslonalternate{\fontfamily{paca}\selectfont}
+\DeclareRobustCommand\adobecaslonlongs{\fontfamily{pacaa}\selectfont}
+\DeclareRobustCommand\adobecaslonswashit{\usefont{T1}{pacw}{\f@series}{it}}
+\DeclareRobustCommand\adobecaslonswashcaps{\usefont{U}{pac}{\f@series}{iw}}
+\DeclareRobustCommand\adobecaslonornaments{\usefont{U}{pac}{m}{n}}
 %</style>
 %    \end{macrocode}
 % 

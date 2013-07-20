@@ -1,0 +1,24 @@
+\ProvidesFile{Upac.fd}
+   [1995/06/29  font definitions for U/pac.]
+
+\DeclareFontFamily{U}{pac}{}
+
+
+\DeclareFontShape{U}{pac}{m}{n}{
+   <-> pacrp
+}{}
+
+\DeclareFontShape{U}{pac}{m}{iw}{
+   <-> pacriaw9d
+}{}
+
+\DeclareFontShape{U}{pac}{sb}{iw}{
+   <-> pacsiaw9d
+}{}
+
+\DeclareFontShape{U}{pac}{b}{iw}{
+   <-> pacbiaw9d
+}{}
+
+
+\endinput

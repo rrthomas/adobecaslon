@@ -1,0 +1,46 @@
+--- t1.etx	2013-08-03 22:10:21.446272380 +0100
++++ t1a.etx	2013-08-03 21:48:52.369647944 +0100
+@@ -752,6 +752,7 @@
+ \ifnumber{\int{ligaturing}}<{-1}\then \skipslots{1}\Else
+ 
+    \setslot{\lc{C}{c}}
++      \ligature{LIG}{\lc{T}{t}}{ct}
+       \comment{The letter `{c}'.}
+    \endsetslot
+ 
+@@ -833,6 +834,7 @@
+ \ifnumber{\int{ligaturing}}<{-1}\then \skipslots{1}\Else
+ 
+    \setslot{\lc{S}{s}}
++      \ligature{LIG}{\lc{T}{t}}{st}
+       \comment{The letter `{s}'.}
+    \endsetslot
+ 
+@@ -943,8 +945,11 @@
+    \comment{The letter `\v N'.}
+ \endsetslot
+ 
+-\setslot{\uc{Ng}{ng}}
+-   \comment{The Sami letter `\NG'.  It is unavailable in \plain\ \TeX.}
++% \setslot{\uc{Ng}{ng}}
++%    \comment{The Sami letter `\NG'.  It is unavailable in \plain\ \TeX.}
++% \endsetslot
++\setslot{ct}
++ \comment{The `old style' ligature ct}
+ \endsetslot
+ 
+ \setslot{\uctop{Ohungarumlaut}{ohungarumlaut}}
+@@ -1076,8 +1081,11 @@
+    \comment{The letter `\v n'.}
+ \endsetslot
+ 
+-\setslot{\lc{Ng}{ng}}
+-   \comment{The Sami letter `\ng'.  It is unavailable in \plain\ \TeX.}
++% \setslot{\lc{Ng}{ng}}
++%    \comment{The Sami letter `\ng'.  It is unavailable in \plain\ \TeX.}
++% \endsetslot
++\setslot{st}
++ \comment{The `old style' ligature st}
+ \endsetslot
+ 
+ \setslot{\lctop{Ohungarumlaut}{ohungarumlaut}}

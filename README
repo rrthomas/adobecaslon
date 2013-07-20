@@ -26,11 +26,15 @@ files (.pfb) in TEXMF/fonts/type1/adobe/adobecaslon
 You also need the “make” utility installed (many systems will have
 this already).
 
-Then run:
+Then, if you have just the base fonts, run:
 
     make
 
-and, assuming everything went OK,
+or, if you have the expert fonts, run:
+
+    make expert
+
+and then, assuming everything went OK,
 
     make install
 

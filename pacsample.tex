@@ -1,4 +1,6 @@
+% FIXME: Put this file into adobecaslon.dtx
 \documentclass{article}
+
 \usepackage[T1]{fontenc}
 \usepackage{ifpdf}
 \ifpdf
@@ -8,23 +10,24 @@
 \usepackage{adobecaslon}
 \usepackage{textcomp}
 \usepackage{lipsum}
+
 \begin{document}
 
-Adobe Caslon Regular: 0123456789. fi, ffi. \lipsum[1]
+Adobe Caslon Regular: 0123456789. fi, ffi, \textsc{small caps}. \lipsum[1]
 
-{\itshape Adobe Caslon Italic: 0123456789. fi, ffi. \lipsum[2]}
+{\itshape Adobe Caslon Italic: 0123456789. fi, ffi, {\scit small caps}. \lipsum[2]}
 
 
 {\sbseries
-Adobe Caslon Semibold: 0123456789. fi, ffi. \lipsum[3]
+Adobe Caslon Semibold: 0123456789. fi, ffi, \textsc{small caps}. \lipsum[3]
 
-\itshape Adobe Caslon Semibold Italic: 0123456789. fi, ffi. \lipsum[4]}
+\itshape Adobe Caslon Semibold Italic: 0123456789. fi, ffi, {\scit small caps}. \lipsum[4]}
 
 
 {\bfseries
-Adobe Caslon Bold: 0123456789. fi, ffi. \lipsum[5]
+Adobe Caslon Bold: 0123456789. fi, ffi, \textsc{small caps}. \lipsum[5]
 
-\itshape Adobe Caslon Bold Italic: 0123456789. fi, ffi. \lipsum[6]}
+\itshape Adobe Caslon Bold Italic: 0123456789. fi, ffi, {\scit small caps}. \lipsum[6]}
 
 
 Package ``textcomp'' allows us to typeset currencies: \texteuro25.00,

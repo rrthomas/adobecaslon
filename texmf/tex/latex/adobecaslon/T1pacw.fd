@@ -1,0 +1,31 @@
+%Filename: T1pacw.fd
+%Created by: tex build_pacw
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{T1pacw.fd}
+   [1996/10/30 Fontinst v1.504 font definitions for T1/pacw.]
+
+\DeclareFontFamily{T1}{pacw}{}
+
+\DeclareFontShape{T1}{pacw}{b}{it}{
+   <-> pacbiaw9d
+}{}
+
+\DeclareFontShape{T1}{pacw}{sb}{it}{
+   <-> pacsiaw9d
+}{}
+\DeclareFontShape{T1}{pacw}{m}{it}{
+   <-> pacriaw9d
+}{}
+
+\DeclareFontShape{T1}{pacw}{sb}{n}{<->ssub * pacw/sb/it}{}
+\DeclareFontShape{T1}{pacw}{b}{n}{<->ssub * pacw/b/it}{}
+\DeclareFontShape{T1}{pacw}{m}{n}{<->ssub * pacw/m/it}{}
+
+
+\DeclareFontShape{T1}{pacw}{bx}{n}{<->ssub * pacw/b/n}{}
+\DeclareFontShape{T1}{pacw}{bx}{it}{<->ssub * pacw/b/it}{}
+
+\endinput

@@ -1,0 +1,31 @@
+%Filename: T1pacaaw.fd
+%Created by: tex build_pacaaw
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{T1pacaaw.fd}
+   [1996/10/30 Fontinst v1.504 font definitions for T1/pacaaw.]
+
+\DeclareFontFamily{T1}{pacaaw}{}
+
+\DeclareFontShape{T1}{pacaaw}{b}{it}{
+   <-> pacbiaaw9d
+}{}
+
+\DeclareFontShape{T1}{pacaaw}{sb}{it}{
+   <-> pacsiaaw9d
+}{}
+\DeclareFontShape{T1}{pacaaw}{m}{it}{
+   <-> pacriaaw9d
+}{}
+
+\DeclareFontShape{T1}{pacaaw}{sb}{n}{<->ssub * pacaaw/sb/it}{}
+\DeclareFontShape{T1}{pacaaw}{b}{n}{<->ssub * pacaaw/b/it}{}
+\DeclareFontShape{T1}{pacaaw}{m}{n}{<->ssub * pacaaw/m/it}{}
+
+
+\DeclareFontShape{T1}{pacaaw}{bx}{n}{<->ssub * pacaaw/b/n}{}
+\DeclareFontShape{T1}{pacaaw}{bx}{it}{<->ssub * pacaaw/b/it}{}
+
+\endinput
