@@ -327,6 +327,11 @@
 \transformfont{pacb8r}{\reencodefont{8r}{\fromafm{awb_____}}}
 \transformfont{pacbi8r}{\reencodefont{8r}{\fromafm{awbi____}}}
 %    \end{macrocode}
+%
+% Make oblique fonts for faking italic small caps:
+%    \begin{macrocode}
+\transformfont{pacro8r}{\slantfont{167}{\frommtx{pacr8r}}}
+\transformfont{pacso8r}{\slantfont{167}{\frommtx{pacs8r}}}
 %</pac-drv,pac-expert-drv>
 %
 % The use of expert fonts is optional, so we have a separate driver for them:
@@ -352,13 +357,11 @@
 \transformfont{pacsi8x}{\fromafm{axsbi___}}
 %    \end{macrocode}
 %
-% Make oblique fonts for faking italic small caps:
+% Make expert oblique fonts for faking italic small caps:
 %
 %    \begin{macrocode}
-\transformfont{pacro8r}{\slantfont{167}{\frommtx{pacr8r}}}
 \transformfont{pacro8x}{\slantfont{167}{\frommtx{pacr8x}}}
 \transformfont{pacrco8x}{\slantfont{167}{\frommtx{pacrc8x}}}
-\transformfont{pacso8r}{\slantfont{167}{\frommtx{pacs8r}}}
 \transformfont{pacso8x}{\slantfont{167}{\frommtx{pacs8x}}}
 \transformfont{pacsco8x}{\slantfont{167}{\frommtx{pacsc8x}}}
 %</pac-expert-drv>
@@ -429,8 +432,14 @@
 \installfonts
 \installfamily{T1}{pac}{}
 \installfont{pacr8t}{pacr8r,newlatin}{t1}{T1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacro8t}{pacro8r,newlatin}{t1}{T1}{pac}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrc8t}{pacr8r,newlatin}{t1c}{T1}{pac}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrco8t}{pacro8r,newlatin}{t1c}{T1}{pac}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacri8t}{pacri8r,newlatin}{t1}{T1}{pac}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacs8t}{pacs8r,newlatin}{t1}{T1}{pac}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacso8t}{pacso8r,newlatin}{t1}{T1}{pac}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacsc8t}{pacs8r,newlatin}{t1c}{T1}{pac}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacsco8t}{pacso8r,newlatin}{t1c}{T1}{pac}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsi8t}{pacsi8r,newlatin}{t1}{T1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacb8t}{pacb8r,newlatin}{t1}{T1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbi8t}{pacbi8r,newlatin}{t1}{T1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
@@ -455,8 +464,14 @@
 \installfonts
 \installfamily{OT1}{pac}{}
 \installfont{pacr7t}{pacr8r,newlatin}{ot1}{OT1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacro7t}{pacro8r,newlatin}{ot1}{OT1}{pac}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrc7t}{pacr8r,newlatin}{ot1c}{OT1}{pac}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrco7t}{pacro8r,newlatin}{ot1c}{OT1}{pac}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacri7t}{pacri8r,newlatin}{ot1}{OT1}{pac}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacs7t}{pacs8r,newlatin}{ot1}{OT1}{pac}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacso7t}{pacso8r,newlatin}{ot1}{OT1}{pac}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacsc7t}{pacs8r,newlatin}{ot1c}{OT1}{pac}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacsco7t}{pacso8r,newlatin}{ot1c}{OT1}{pac}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsi7t}{pacsi8r,newlatin}{ot1}{OT1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacb7t}{pacb8r,newlatin}{ot1}{OT1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbi7t}{pacbi8r,newlatin}{ot1}{OT1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
