@@ -8,7 +8,7 @@ FONT=adobecaslon
 build: prepare
 	fontinst pac-drv.tex
 	$(MAKE) fonts
-	pdflatex pacsample.tex
+	pdflatex pac-sample.tex
 
 expert: prepare
 	cp t1.etx t1a.etx
@@ -18,7 +18,7 @@ expert: prepare
 	fontinst pac-expert-drv.tex
 	$(MAKE) fonts
 	cat pac-extra.map >> pac.map
-	pdflatex pacsample-expert.tex
+	pdflatex pac-sample-expert.tex
 
 prepare:
 	latex adobecaslon.ins

@@ -779,6 +779,61 @@
 %</style>
 %    \end{macrocode}
 % 
+%\subsection{Example output}
+%
+% A file with slight variants for core and expert fonts:
+%
+%<*pac-sample,pac-sample-expert>
+%    \begin{macrocode}
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{ifpdf}
+\ifpdf
+   \pdfmapfile{+pac.map}
+   \usepackage{microtype}
+\fi
+%<pac-sample>\usepackage{adobecaslon}
+%<pac-sample-expert>\usepackage[expert]{adobecaslon}
+\usepackage{textcomp}
+\usepackage{lipsum}
+\usepackage{slantsc}
+
+%<pac-sample>\newcommand{\sampletext}{0123456789. fi, ffi, \textsc{small caps}.}
+%<pac-sample-expert>\newcommand{\sampletext}{0123456789 {\adobecaslonosf 0123456789}. fi, ffi, \textsc{small caps}, {\adobecaslonalternate ct st}.}
+
+\begin{document}
+
+Adobe Caslon Regular: \sampletext
+
+{\itshape Adobe Caslon Italic: \sampletext}
+
+{\sbseries Adobe Caslon Semibold: \sampletext
+
+\itshape Adobe Caslon Semibold Italic: \sampletext}
+
+
+{\bfseries Adobe Caslon Bold: \sampletext
+
+\itshape Adobe Caslon Bold Italic: \sampletext}
+
+
+Package \textsf{textcomp} allows us to typeset currencies: \texteuro25.00,
+\pounds4.5, \textdollar6, \textyen4.
+
+{\adobecaslonlongs Some words with long `s': dress splice slice strife finesse sift shine stints.}
+
+{\adobecaslonswashit Some swash italics.}
+
+Swash caps: {\adobecaslonswashcaps SQT}.
+
+Ornaments: {\adobecaslonornaments 123ABCabc}.
+
+\lipsum[1]
+
+\end{document}
+%    \end{macrocode}
+%</pac-sample,pac-sample-expert>
 %
 %\Finale
 %\clearpage
