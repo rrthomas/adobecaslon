@@ -15,6 +15,8 @@ expert: prepare
 	patch t1a.etx t1a.etx.diff
 	cp t1a.etx t1aa.etx
 	patch t1aa.etx t1aa.etx.diff
+	cp t1aa.etx t1aa8.etx
+	patch t1aa8.etx t1aa8.etx.diff
 	fontinst pac-expert-drv.tex
 	$(MAKE) fonts
 	cat pac-extra.map >> pac.map

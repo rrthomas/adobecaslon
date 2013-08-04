@@ -565,6 +565,23 @@
 \installfont{pacbiaa9d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{it}{ <->\string\adobecaslon@scaled}
 %    \end{macrocode}
 %
+% The \texttt{c18th} option:
+%    \begin{macrocode}
+\installfamily{T1}{pacaa8}{}
+\installfont{pacraa89d}{pacr8r,pacr7a,pacr8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacroaa89d}{pacro8r,pacro8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaa89d}{pacrc8x,pacr8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaa89d}{pacrco8x,pacro8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacriaa89d}{pacri8r,pacri7a,pacri8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacsaa89d}{pacs8r,pacs7a,pacs8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsoaa89d}{pacso8r,pacso8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaa89d}{pacsc8x,pacs8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaa89d}{pacsco8x,pacso8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsiaa89d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacbaa89d}{pacb8r,pacb7a,pacb8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbiaa89d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{it}{ <->\string\adobecaslon@scaled}
+%    \end{macrocode}
+%
 % End the expert fonts installation:
 %    \begin{macrocode}
 \endinstallfonts
@@ -641,7 +658,7 @@
 \setleftkerning{longst}{longs}{1000}
 \setrightkerning{longst}{t}{1000}
 \setleftrightkerning{longdbls}{longs}{1000}
-%% FIXME: these go in 18th-century option
+%% FIXME: these go in extended option
 %% \setleftkerning{longdblsi}{longs}{1000}
 %% \setrightkerning{longdblsi}{i}{1000}
 %% \setleftkerning{longdblsl}{longs}{1000}
@@ -655,13 +672,38 @@
 \unfakable{longsl}
 \unfakable{longst}
 \unfakable{longdbls}
-%% FIXME: these go in 18th-century option
+%% FIXME: these go in extended option
 %%\unfakable{longdblsi}
 %%\unfakable{longdblsl}
 
 \endmetrics
 %    \end{macrocode}
 %</newlatinaa>
+%
+% The 18th century variant:
+%<*newlatinaa8>
+%    \begin{macrocode}
+\relax
+
+\metrics
+
+\inputmtx{newlatinaa}
+
+%% Kerning
+
+\setleftkerning{longss}{longs}{1000}
+\setrightkerning{longss}{s}{1000}
+
+%% Extra glyphs
+
+\setglyph{longss}
+  \glyph{longs}{1000}
+  \glyph{s}{1000}
+\endsetglyph
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaa8>
 %
 %\subsection{Encodings}
 %
@@ -686,11 +728,10 @@
 % The `long s' variant.
 %    \begin{macrocode}
 %<*t1aa>
-%% FIXME: This goes in c18th option
+%% FIXME: This goes in extended option
 %%\nextslot{24}
 %%\setslot{longdbls}
 %% \ligature{LIG}{visiblespace}{longss}
-%% FIXME: These go in extended option
 %% \ligature{LIG}{\lc{I}{i}}{longdblsi}
 %% \ligature{LIG}{\lc{l}{l}}{longdblsl}
 %%   \comment{The ligature `long s' `long s'.}
@@ -706,12 +747,6 @@
 %%\setslot{longdblsl}
 %%   \comment{The ligature `long s' `long s' `{l}'.}
 %%\endsetslot
-
-%% FIXME: This goes in c18 option
-%% \nextslot{255}
-%% \setslot{longss} : actually need artificial ligature
-%%    \comment{The ligature `long s' `{s}'.}
-%% \endsetslot
 
 \endencoding
 %</t1aa>
@@ -735,6 +770,24 @@
 %</t1aaj>
 %    \end{macrocode}
 %
+% The eighteenth-century variant with old-style figures.
+%
+%    \begin{macrocode}
+%<*t1aa8j>
+\relax
+
+\encoding
+
+%% Define the parameters to produce a font with old-style figures
+\setcommand\digit#1{#1oldstyle}
+
+%% Then load t1aa8.etx
+\inputetx{t1aa8}
+
+\endencoding
+%</t1aa8j>
+%    \end{macrocode}
+%
 %\subsection{Font definitions}
 %
 % We define the ornament and swash font encodings directly, in files
@@ -754,6 +807,7 @@
 \DeclareVoidOption{swashit}{\def\f@ntsuffix{w}}
 \DeclareVoidOption{alternate}{\def\f@ntsuffix{a}}
 \DeclareVoidOption{longs}{\def\f@ntsuffix{aa}}
+\DeclareVoidOption{c18th}{\def\f@ntsuffix{aa8}}
 \DeclareVoidOption{swashlongs}{\def\f@ntsuffix{aaw}}
 \DeclareBoolOption{normdefault}
 \DeclareComplementaryOption{rmdefault}{normdefault}
@@ -780,6 +834,7 @@
 \DeclareRobustCommand\adobecaslonosf{\fontfamily{pacj}\selectfont}
 \DeclareRobustCommand\adobecaslonalternate{\fontfamily{paca}\selectfont}
 \DeclareRobustCommand\adobecaslonlongs{\fontfamily{pacaa}\selectfont}
+\DeclareRobustCommand\adobecaslonceighteenth{\fontfamily{pacaa8}\selectfont}
 \DeclareRobustCommand\adobecaslonswashit{\usefont{T1}{pacw}{\f@series}{it}}
 \DeclareRobustCommand\adobecaslonswashcaps{\usefont{U}{pac}{\f@series}{iw}}
 \DeclareRobustCommand\adobecaslonornaments{\usefont{U}{pac}{m}{n}}
@@ -835,6 +890,8 @@ Package \textsf{textcomp} allows us to typeset currencies: \texteuro25.00,
 Swash caps: {\adobecaslonswashcaps SQT}.
 
 Ornaments: {\adobecaslonornaments 123ABCabc}.
+
+18th-century mode: {\adobecaslonceighteenth dress, kasbah, shake, sforza, fsork, ska}.
 
 \lipsum[1]
 
