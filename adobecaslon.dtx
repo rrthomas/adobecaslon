@@ -755,11 +755,15 @@
 \DeclareBoolOption{normdefault}
 \DeclareComplementaryOption{rmdefault}{normdefault}
 \DeclareStringOption[1.00]{scaled}
+\DeclareBoolOption{bold}
+\DeclareComplementaryOption{semibold}{bold}
 \ProcessKeyvalOptions*
 \ifadobecaslon@normdefault\else
   \renewcommand{\rmdefault}{pac\f@ntsuffix}
 \fi
-\DeclareVoidOption{semibold}{\def\bfdefault{sb}} % FIXME: make this the default? (e.g. no bold small caps)
+\ifadobecaslon@bold\else
+  \def\bfdefault{sb}
+\fi
 %    \end{macrocode}
 % 
 %
@@ -793,8 +797,8 @@
    \pdfmapfile{+pac.map}
    \usepackage{microtype}
 \fi
-%<pac-sample>\usepackage{adobecaslon}
-%<pac-sample-expert>\usepackage[expert]{adobecaslon}
+%<pac-sample>\usepackage[bold]{adobecaslon}
+%<pac-sample-expert>\usepackage[expert,bold]{adobecaslon}
 \usepackage{textcomp}
 \usepackage{lipsum}
 \usepackage{slantsc}
