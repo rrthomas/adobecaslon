@@ -18,6 +18,7 @@ expert: prepare
 	fontinst pac-expert-drv.tex
 	$(MAKE) fonts
 	cat pac-extra.map >> pac.map
+	pdflatex pac-sample.tex
 	pdflatex pac-sample-expert.tex
 
 prepare:
