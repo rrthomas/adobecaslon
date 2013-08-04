@@ -760,9 +760,9 @@
 \ProcessKeyvalOptions*
 \ifadobecaslon@normdefault\else
   \renewcommand{\rmdefault}{pac\f@ntsuffix}
-\fi
-\ifadobecaslon@bold\else
-  \def\bfdefault{sb}
+  \ifadobecaslon@bold\else
+    \def\bfdefault{sb}
+  \fi
 \fi
 %    \end{macrocode}
 % 
