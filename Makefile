@@ -60,5 +60,5 @@ uninstall:
 	rm -f $(TEXMF)/doc/tex/latex/$(FONT)/*.pdf
 
 clean:
-	rm -f *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo *.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf *.pdf pac-drv.tex pac-sample.tex pac-expert-drv.tex pac-sample-expert.tex pac-map.tex pac-rec.tex pac.map adobecaslon.sty
+	rm -f *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo *.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf *.pdf pac-drv.tex pac-sample.tex pac-expert-drv.tex pac-sample-expert.tex pac-map.tex pac-rec.tex pac.map adobecaslon.sty t1a.etx t1aa.etx t1aj.etx t1aaj.etx
 	rm -rf texmf-dist
