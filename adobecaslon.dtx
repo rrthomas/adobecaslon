@@ -259,6 +259,11 @@
 % \DescribeMacro{\adobecaslonornaments}
 % Select ornaments.
 %
+%% FIXME
+% Note that currently hyphenation of long ‘s’ does not work properly:
+% \TeX\ seems to register a word boundary before the hyphen, so the
+% ‘s’ is shortened incorrectly. As a workaround, use |\noboundary|
+% directly before such a hyphenation.
 %
 % \StopEventually{
 %   \clearpage
@@ -883,7 +888,11 @@ Adobe Caslon Regular: \sampletext
 Package \textsf{textcomp} allows us to typeset currencies: \texteuro25.00,
 \pounds4.5, \textdollar6, \textyen4.
 
-{\adobecaslonlongs Some words with long `s': dress splice slice strife finesse sift shine stints.}
+{\adobecaslonlongs Some words with long `s': dress splice slice strife finesse sift shine stints.
+
+A long line with splits-seen and a word to be hyphenated and should long: shes\-ellsseashells.
+
+A long line with splits-seen and a word to be hyphenated and should long: shes\noboundary\-ellsseashells.}
 
 {\adobecaslonswashit Some swash italics.}
 

@@ -1,5 +1,5 @@
---- t1a.etx	2013-08-04 22:59:32.300668010 +0100
-+++ t1aa.etx	2013-08-04 23:10:54.008259972 +0100
+--- t1a.etx	2013-08-05 11:54:30.245539429 +0100
++++ t1aa.etx	2013-08-05 11:57:59.626142699 +0100
 @@ -408,11 +408,23 @@
        It is used to stop ligaturing in words like `shelf{}ful'.}
  \endsetslot
@@ -98,7 +98,7 @@
        \Fi
        \comment{The letter `{f}'.}
     \endsetslot
-@@ -831,14 +855,32 @@
+@@ -831,14 +855,33 @@
     \comment{The letter `{r}'.}
  \endsetslot
  
@@ -133,6 +133,7 @@
 +   \ligature{LIG/}{exclam}{\lc{S}{s}}
 +   \ligature{LIG/}{parenright}{\lc{S}{s}}
 +   \ligature{LIG/}{quoteright}{\lc{S}{s}}
++   \ligature{LIG/}{hyphen}{\lc{S}{s}}
 +   \ligature{LIG/}{\lc{F}{f}}{\lc{S}{s}}
 +   \comment{The letter `long s'.}
 +\endsetslot
