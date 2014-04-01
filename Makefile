@@ -56,7 +56,7 @@ dist:
 	mkdir -p texmf-dist/tex/latex/$(FONT)/
 	cp -pf *.sty *.fd texmf-dist/tex/latex/$(FONT)/
 	mkdir -p texmf-dist/doc/tex/latex/$(FONT)/
-	cp -pf README *.pdf texmf-dist/doc/tex/latex/$(FONT)/
+	cp -pf README pac-sample-expert.pdf texmf-dist/doc/tex/latex/$(FONT)/
 	cp -pr texmf/* texmf-dist/
 	cd texmf-dist/ && zip -r ../adobecaslon.tds.zip .
 
