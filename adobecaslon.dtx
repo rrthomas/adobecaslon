@@ -308,8 +308,7 @@
 % Select long `s'.
 %
 % \DescribeMacro{\adobecasloneighteenth}
-% Select long `s' with 18th century rules. See
-% \url{http://babelstone.blogspot.co.uk/2006/06/rules-for-long-s.html}.
+% Select long `s' with 18th century rules (see Section~\ref{sec:longs}).
 %
 % \DescribeMacro{\adobecaslonswashit}
 % Select swash italics.
@@ -325,6 +324,42 @@
 % `s' is shortened incorrectly. As a workaround, use |\noboundary|
 % directly before such a hyphenation.
 %
+%\subsection{Rules for `long s'}
+%\label{sec:longs}
+%
+% The following rules are implemented automatically for the use of `long s' when
+% the |longs| package option or |\adobecaslonlongs| command is used. Some come
+% directly from the font; others are taken from
+% \url{http://babelstone.blogspot.co.uk/2006/06/rules-for-long-s.html}. See also
+% \url{http://english.stackexchange.com/questions/96408/during-what-period-of-history-did-english-use-ss-the-sharp-s-ligature}.
+%
+% \begin{itemize}
+% \item `Long s' becomes short at the end of a word.
+% \item `Long s' becomes short before apostrophe.
+% \item `Long s' becomes short before and after `f'.
+% \item `Long s' before manual hyphen (i.e., glyph |hyphen|; line-break hyphen
+%   is |hyphenchar|) becomes short.
+% \end{itemize}
+%
+% The following rules must be applied manually:
+%
+% \begin{itemize}
+% \item `Long s' is retained at the end of abbreviations before the full stop:
+%   add |\noboundary| before stop.
+% \item `Long s' before line-break hyphen (glyph |hyphenchar|): this is
+%   incorrectly shortened, so add |\noboundary\-| at the hyphenation point.
+% \item To shorten a `long s' that is not automatically shortened, insert some
+%   sort of break after it.
+% \end{itemize}
+%
+% The following additional rules are implemented when the |c18th| package option
+% or |\adobecasloneighteenth| command is used:
+%
+% \begin{itemize}
+% \item The `eszet'-style ligature becomes a `long s'--`short s' ligature.
+% \item `Long s' is shortened before b and k.
+% \end{itemize}
+%
 % \StopEventually{
 %   \clearpage
 %
@@ -334,6 +369,11 @@
 % \clearpage
 %\section{Implementation}
 %\label{sec:impl}
+%
+% It might seem odd that for version~2 of this package, prepared in 2014, we are
+% still using fontinst and PostScript Type~1 fonts. The reason is that as of
+% \TeX\ Live~2012, \LuaTeX\ seems to kern Adobe Caslon Pro poorly, and the
+% |hlig| historical ligature rules don't seem to work as expected.
 %
 %\subsection{Identification}
 %\label{sec:ident}
