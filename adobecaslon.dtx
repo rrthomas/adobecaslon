@@ -35,7 +35,7 @@
 % OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 % POSSIBILITY OF SUCH DAMAGE.
 %
-% \CheckSum{337} (N.B. reactivate checksum for production)
+% \CheckSum{337} (FIXME: reactivate checksum for production)
 % \fi 
 %
 %
@@ -92,8 +92,6 @@
 %\section{Installation}
 %\label{sec:install}
 %
-%
-%
 % The following instructions assume a TeX Directory Structure
 % compliant TeX system. If you don't know what that is, you probably
 % have one! Otherwise, you'll need to work out where to put the files
@@ -102,7 +100,7 @@
 % First, you need to purchase the fonts themselves: the |pfb| files
 % are \emph{not} included in the package.  If you got the fonts from
 % Adobe, do not rename the |pfb| files.  However, if
-% there are uppercase letters in your file names, downcase them.  If
+% there are uppercase letters in your files' names, downcase them.  If
 % you obtained the files from another source, rename the fonts
 % according to Table~\ref{tab:PFB} and, if you have the expert fonts,
 % Table~\ref{tab:expertPFB}.  Install the files into
@@ -179,9 +177,66 @@
 %
 % \end{table}
 %
-% The style |adobecaslon.sty| provides a number of commands for using the
-% font family (see Section~\ref{sec:adobecaslon.sty}).
+% The package |adobecaslon.sty| provides a number of commands for using
+% the font family (see Section~\ref{sec:adobecaslon.sty}).
 %
+%\subsection{Fonts for extra ligatures}
+%\label{sec:extraligs}
+%
+% There is a range of ligatures for the `long s' letter in the Alternate fonts,
+% but there are others it is nice to have (although the fonts do quite well
+% without them). They are quite easy to make in a font editor such as FontForge
+% (\url{http://fontforge.github.io}): for example, `|longs| |longs| |i|' can be
+% made by grafting the left-hand letter of the `|longs| |longs|' ligature on to
+% the `|longs| |i|' ligature.
+%
+% Unfortunately, distributing these ligatures would probably be illegal in many
+% countries, so if you want them you will have to make them for yourself.
+%
+% Table~\ref{tab:extraenc} lists the extra ligatures supported, along with the
+% code point at which each glyph should appear and the corresponding glyph name
+% in the standard encoding. (It would be nice to support a wider range of extra
+% ligatures if there were a way of detecting which the user had supplied.)
+% Table~\ref{tab:extraPFB} lists the required font files, one for each Alternate
+% font. The extra ligatures are used when the |extraligs| package option is
+% given.
+%
+%\begin{table}[tp]
+%   \centering
+%   \caption{Supported extra ligatures}
+%   \label{tab:extraenc}
+%
+%   \begin{tabular}{lll}
+%     \toprule
+%    Ligature sequence  &  Code point  &  Standard glyph at code point \\
+%    \midrule
+% |longs| |longs| |i| & 0x49 & i\\
+% |longs| |longs| |l| & 0x4c & l\\
+%    \bottomrule
+%   \end{tabular}
+%
+% \end{table}
+%
+%\begin{table}[tp]
+%   \centering
+%   \caption{Extra ligature PFB Files}
+%   \label{tab:extraPFB}
+%
+%   \begin{tabular}{ll}
+%     \toprule
+%    File  &  Font \\
+%    \midrule
+% |awabe___.pfb| & Adobe Caslon Bold Alternate Extra\\
+% |awabie__.pfb| & Adobe Caslon Bold Italic Alternate Extra\\
+% |awaie___.pfb| & Adobe Caslon Italic Alternate Extra\\
+% |awarge__.pfb| & Adobe Caslon Regular Alternate Extra\\
+% |awasbe__.pfb| & Adobe Caslon Semibold Alternate Extra\\
+% |awasie__.pfb| & Adobe Caslon Semibold Italic Alternate Extra\\
+%    \bottomrule
+%   \end{tabular}
+%
+% \end{table}
+% 
 %
 %\section{Using \LaTeX{} Style }
 %\label{sec:adobecaslon.sty}
@@ -189,7 +244,7 @@
 % To use the package, add to the preamble of your document the usual
 % incantation \cmd{\usepackage}\oarg{options}|{adobecaslon}|.
 %
-% Several options are defined; see Table~\ref{tab:options}
+% Several options are defined; see Table~\ref{tab:options}.
 % \begin{table}[tp]
 %   \centering
 %   \caption{Package options}
@@ -204,8 +259,10 @@
 % |swashit|     & Use swash italics (requires expert fonts) \\
 % |alternate|   & Use alternate old-style ligatures (requires expert fonts) \\
 % |longs|       & Use long `s' (requires expert fonts) \\
+% |c18th|       & Use long `s' with 18th century rules (require expert fonts) \\
+% |extraligs|   & Use extra ligatures with |longs| or |c18th| (see Section~\ref{sec:extraligs}) \\
 % |swashlongs|  & Use long `s' with swashes (requires expert fonts) \\
-% |normdefault| & Don't make Caslon the default roman typeface (forces |bold|) \\
+% |normdefault| & Don't make Caslon the default roman typeface \\
 % |rmdefault|   & Make Caslon the default roman typeface (default) \\
 % |scaled=N|    & Scale the font by the given factor (default: $1.00$) \\
 % |bold|        & Use bold faces for |\bfseries| \\
@@ -251,7 +308,8 @@
 % Select long `s'.
 %
 % \DescribeMacro{\adobecasloneighteenth}
-% Select long `s' with eighteenth-century rules.
+% Select long `s' with 18th century rules. See
+% \url{http://babelstone.blogspot.co.uk/2006/06/rules-for-long-s.html}.
 %
 % \DescribeMacro{\adobecaslonswashit}
 % Select swash italics.
@@ -262,7 +320,6 @@
 % \DescribeMacro{\adobecaslonornaments}
 % Select ornaments.
 %
-%% FIXME
 % Note that currently hyphenation of long `s' does not work properly:
 % \TeX\ seems to register a word boundary before the hyphen, so the
 % `s' is shortened incorrectly. As a workaround, use |\noboundary|
@@ -286,7 +343,7 @@
 %<style>\NeedsTeXFormat{LaTeX2e}
 %<driver>\ProvidesFile{adobecaslon.dtx}
 %<style>\ProvidesPackage{adobecaslon}
-%<style>   [2013/07/31 v2.0 Using Adobe Caslon Font in LaTeX]
+%<style>   [2014/04/01 v2.0 Using Adobe Caslon Font in LaTeX]
 %    \end{macrocode}
 % And the driver code:
 %    \begin{macrocode}
@@ -317,7 +374,7 @@
 % 
 % First, the preamble
 %    \begin{macrocode}
-%<*pac-drv,pac-expert-drv>
+%<*pac-drv,pac-expert-drv,pac-extraligs-drv>
 \input fontinst.sty
 \substitutesilent{bx}{b}
 %    \end{macrocode}
@@ -326,11 +383,11 @@
 % Starting recording transforms:
 %    \begin{macrocode}
 \recordtransforms{pac-rec.tex}
-%</pac-drv,pac-expert-drv>
+%</pac-drv,pac-expert-drv,pac-extraligs-drv>
 %    \end{macrocode}
 % The base fonts:
 %    \begin{macrocode}
-%<*pac-drv,pac-expert-drv>
+%<*pac-drv,pac-expert-drv,pac-extraligs-drv>
 \transformfont{pacr8r}{\reencodefont{8r}{\fromafm{awrg____}}}
 \transformfont{pacri8r}{\reencodefont{8r}{\fromafm{awi_____}}}
 \transformfont{pacs8r}{\reencodefont{8r}{\fromafm{awsb____}}}
@@ -343,11 +400,11 @@
 %    \begin{macrocode}
 \transformfont{pacro8r}{\slantfont{167}{\frommtx{pacr8r}}}
 \transformfont{pacso8r}{\slantfont{167}{\frommtx{pacs8r}}}
-%</pac-drv,pac-expert-drv>
+%</pac-drv,pac-expert-drv,pac-extraligs-drv>
 %
 % The use of expert fonts is optional, so we have a separate driver for them:
 %    \begin{macrocode}
-%<*pac-expert-drv>
+%<*pac-expert-drv,pac-extraligs-drv>
 \transformfont{pacb7a}{\fromafm{awab____}}
 \transformfont{pacbi7a}{\fromafm{awabi___}}
 \transformfont{pacri7a}{\fromafm{awai____}}
@@ -375,14 +432,26 @@
 \transformfont{pacrco8x}{\slantfont{167}{\frommtx{pacrc8x}}}
 \transformfont{pacso8x}{\slantfont{167}{\frommtx{pacs8x}}}
 \transformfont{pacsco8x}{\slantfont{167}{\frommtx{pacsc8x}}}
-%</pac-expert-drv>
+%</pac-expert-drv,pac-extraligs-drv>
+%    \end{macrocode}
+%
+% The ``extraligs'' fonts must be supplied by the user, so they have a separate driver:
+%    \begin{macrocode}
+%<*pac-extraligs-drv>
+\transformfont{pacb7ae}{\fromafm{awabe___}}
+\transformfont{pacbi7ae}{\fromafm{awabie__}}
+\transformfont{pacri7ae}{\fromafm{awaie___}}
+\transformfont{pacr7ae}{\fromafm{awarge__}}
+\transformfont{pacs7ae}{\fromafm{awasbe__}}
+\transformfont{pacsi7ae}{\fromafm{awasie__}}
+%</pac-extraligs-drv>
 %    \end{macrocode}
 %
 % There is no hook in |fontinst.sty| for writing our own preamble to
 % |.fd| file.  However, we need to add scaling commands to the
 % preamble, so we patch \textsf{fontinst}:
 %    \begin{macrocode}
-%<*pac-drv,pac-expert-drv>
+%<*pac-drv,pac-expert-drv,pac-extraligs-drv>
 \fontinstcc
 \def\fd_family#1#2#3{
    \a_toks{#3}
@@ -489,14 +558,17 @@
 \endinstallfonts
 %    \end{macrocode}
 %
-% Now the expert fonts, which we make available only in T1 encoding.
-%<*pac-expert-drv>
+% Now the expert and extra ligature fonts, which we make available only in T1
+% encoding.
+%<*pac-expert-drv,pac-extraligs-drv>
 %    \begin{macrocode}
 \installfonts
+%</pac-expert-drv,pac-extraligs-drv>
 %    \end{macrocode}
 %
 % First, the \texttt{expert} option:
 %    \begin{macrocode}
+%<*pac-expert-drv>
 \installfamily{T1}{pacx}{}
 \installfont{pacr9e}{pacr8r,pacr8x,newlatin}{t1}{T1}{pacx}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacro9e}{pacro8r,pacro8x,newlatin}{t1}{T1}{pacx}{m}{sl}{ <->\string\adobecaslon@scaled}
@@ -588,18 +660,57 @@
 \installfont{pacsiaa89d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa89d}{pacb8r,pacb7a,pacb8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa89d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{it}{ <->\string\adobecaslon@scaled}
+%</pac-expert-drv>
 %    \end{macrocode}
 %
-% End the expert fonts installation:
+% Now the extra ligature fonts. First, the \texttt{longs} with
+% \texttt{extraligs} option (see Section~\ref{sec:extraligs}):
+%    \begin{macrocode}
+%<*pac-extraligs-drv>
+\installfamily{T1}{pacaae}{}
+\installfont{pacraae9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacroaae9d}{pacro8r,pacro8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaae9d}{pacrc8x,pacr8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaae9d}{pacrco8x,pacro8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacriaae9d}{pacri8r,pacri7a,pacri7ae,pacri8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacsaae9d}{pacs8r,pacs7a,pacs7ae,pacs8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsoaae9d}{pacso8r,pacso8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaae9d}{pacsc8x,pacs8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaae9d}{pacsco8x,pacso8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsiaae9d}{pacsi8r,pacsi7a,pacsi7ae,pacsi8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacbaae9d}{pacb8r,pacb7a,pacb7ae,pacb8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbiaae9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{it}{ <->\string\adobecaslon@scaled}
+%    \end{macrocode}
+%
+% Then the \texttt{c18th}with \texttt{extraligs} option:
+%    \begin{macrocode}
+\installfamily{T1}{pacaa8e}{}
+\installfont{pacraa8e9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacroaa8e9d}{pacro8r,pacro8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaa8e9d}{pacrc8x,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaa8e9d}{pacrco8x,pacro8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacriaa8e9d}{pacri8r,pacri7a,pacri7ae,pacri8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacsaa8e9d}{pacs8r,pacs7a,pacs7ae,pacs8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacsoaa8e9d}{pacso8r,pacso8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{sl}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaa8e9d}{pacsc8x,pacs8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaa8e9d}{pacsco8x,pacso8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsiaa8e9d}{pacsi8r,pacsi7a,pacsi7ae,pacsi8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{it}{ <->\string\adobecaslon@scaled}
+\installfont{pacbaa8e9d}{pacb8r,pacb7a,pacb7ae,pacb8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{b}{n}{ <->\string\adobecaslon@scaled}
+\installfont{pacbiaa8e9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{b}{it}{ <->\string\adobecaslon@scaled}
+%</pac-extraligs-drv>
+%    \end{macrocode}
+%
+% End the fonts installation:
+%<*pac-expert-drv,pac-extraligs-drv>
 %    \begin{macrocode}
 \endinstallfonts
 %    \end{macrocode}
-%</pac-expert-drv>
+%</pac-expert-drv,pac-extraligs-drv>
 % End the driver:
 %    \begin{macrocode}
 \endrecordtransforms
 \bye
-%</pac-drv,pac-expert-drv>
+%</pac-drv,pac-expert-drv,pac-extraligs-drv>
 %    \end{macrocode}
 %
 %\subsection{Fontmap Generation}
@@ -666,11 +777,6 @@
 \setleftkerning{longst}{longs}{1000}
 \setrightkerning{longst}{t}{1000}
 \setleftrightkerning{longdbls}{longs}{1000}
-%% FIXME: these go in extended option
-%% \setleftkerning{longdblsi}{longs}{1000}
-%% \setrightkerning{longdblsi}{i}{1000}
-%% \setleftkerning{longdblsl}{longs}{1000}
-%% \setrightkerning{longdblsl}{l}{1000}
 
 %% Unfakable glyphs
 
@@ -680,13 +786,36 @@
 \unfakable{longsl}
 \unfakable{longst}
 \unfakable{longdbls}
-%% FIXME: these go in extended option
-%%\unfakable{longdblsi}
-%%\unfakable{longdblsl}
 
 \endmetrics
 %    \end{macrocode}
 %</newlatinaa>
+%
+% The `long s' variant with extra ligatures.
+%
+%<*newlatinaae>
+%    \begin{macrocode}
+\relax
+
+\metrics
+
+\inputmtx{newlatinaa}
+
+%% Kerning
+
+\setleftkerning{longdblsi}{longs}{1000}
+\setrightkerning{longdblsi}{i}{1000}
+\setleftkerning{longdblsl}{longs}{1000}
+\setrightkerning{longdblsl}{l}{1000}
+
+%% Unfakable glyphs
+
+\unfakable{longdblsi}
+\unfakable{longdblsl}
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaae>
 %
 % The 18th century variant:
 %<*newlatinaa8>
@@ -696,7 +825,29 @@
 \metrics
 
 \inputmtx{newlatinaa}
+\inputmtx{longss}
 
+\endmetrics
+%    \end{macrocode}
+%</newlatinaa8>
+%
+% The 18th century variant with extra ligatures:
+%<*newlatinaa8e>
+%    \begin{macrocode}
+\relax
+
+\metrics
+
+\inputmtx{newlatinaae}
+\inputmtx{longss}
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaa8e>
+%
+% A fragment for long `s' followed by `s'.
+%    \begin{macrocode}
+%<*longss>
 %% Kerning
 
 \setleftkerning{longss}{longs}{1000}
@@ -708,10 +859,8 @@
   \glyph{longs}{1000}
   \glyph{s}{1000}
 \endsetglyph
-
-\endmetrics
 %    \end{macrocode}
-%</newlatinaa8>
+%</longss>
 %
 %\subsection{Encodings}
 %
@@ -726,38 +875,10 @@
 %% Define the parameters to produce a font with old-style figures
 \setcommand\digit#1{#1oldstyle}
 
-%% Then load t1a.etx
 \inputetx{t1a}
 
 \endencoding
 %</t1aj>
-%    \end{macrocode}
-%
-% The `long s' variant.
-%    \begin{macrocode}
-%<*t1aa>
-%% FIXME: This goes in extended option
-%%\nextslot{24}
-%%\setslot{longdbls}
-%% \ligature{LIG}{visiblespace}{longss}
-%% \ligature{LIG}{\lc{I}{i}}{longdblsi}
-%% \ligature{LIG}{\lc{l}{l}}{longdblsl}
-%%   \comment{The ligature `long s' `long s'.}
-%%\endsetslot
-
-%% FIXME: These two go in extended option
-%% \nextslot{95}
-%% \setslot{longdblsi}
-%%    \comment{The ligature `long s' `long s' `{i}'.}
-%% \endsetslot
-
-%%\nextslot{124}
-%%\setslot{longdblsl}
-%%   \comment{The ligature `long s' `long s' `{l}'.}
-%%\endsetslot
-
-\endencoding
-%</t1aa>
 %    \end{macrocode}
 %
 % The `long s' variant with old-style figures.
@@ -771,7 +892,6 @@
 %% Define the parameters to produce a font with old-style figures
 \setcommand\digit#1{#1oldstyle}
 
-%% Then load t1aa.etx
 \inputetx{t1aa}
 
 \endencoding
@@ -789,11 +909,44 @@
 %% Define the parameters to produce a font with old-style figures
 \setcommand\digit#1{#1oldstyle}
 
-%% Then load t1aa8.etx
 \inputetx{t1aa8}
 
 \endencoding
 %</t1aa8j>
+%    \end{macrocode}
+%
+% The `long s' variant with old-style figures and extra ligatures.
+%
+%    \begin{macrocode}
+%<*t1aaje>
+\relax
+
+\encoding
+
+%% Define the parameters to produce a font with old-style figures
+\setcommand\digit#1{#1oldstyle}
+
+\inputetx{t1aae}
+
+\endencoding
+%</t1aaje>
+%    \end{macrocode}
+%
+% The eighteenth-century variant with old-style figures and extra ligatures.
+%
+%    \begin{macrocode}
+%<*t1aa8je>
+\relax
+
+\encoding
+
+%% Define the parameters to produce a font with old-style figures
+\setcommand\digit#1{#1oldstyle}
+
+\inputetx{t1aa8e}
+
+\endencoding
+%</t1aa8je>
 %    \end{macrocode}
 %
 %\subsection{Font definitions}
@@ -809,22 +962,32 @@
 %    \begin{macrocode}
 %<*style>
 \RequirePackage{kvoptions}
-\def\f@ntsuffix{}
-\DeclareVoidOption{expert}{\def\f@ntsuffix{x}}
-\DeclareVoidOption{osf}{\def\f@ntsuffix{j}}
-\DeclareVoidOption{swashit}{\def\f@ntsuffix{w}}
-\DeclareVoidOption{alternate}{\def\f@ntsuffix{a}}
-\DeclareVoidOption{longs}{\def\f@ntsuffix{aa}}
-\DeclareVoidOption{c18th}{\def\f@ntsuffix{aa8}}
-\DeclareVoidOption{swashlongs}{\def\f@ntsuffix{aaw}}
-\DeclareBoolOption{normdefault}
-\DeclareComplementaryOption{rmdefault}{normdefault}
+\RequirePackage{ifthen}
+\def\adobecaslonf@ntsuffix{}
+\DeclareVoidOption{expert}{\def\adobecaslonf@ntsuffix{x}}
+\DeclareVoidOption{osf}{\def\adobecaslonf@ntsuffix{j}}
+\DeclareVoidOption{swashit}{\def\adobecaslonf@ntsuffix{w}}
+\DeclareVoidOption{alternate}{\def\adobecaslonf@ntsuffix{a}}
+\newif\ifadobecaslon@longs\adobecaslon@longsfalse
+\DeclareVoidOption{longs}{\def\adobecaslonf@ntsuffix{aa}\ifadobecaslon@longstrue}
+\newif\ifadobecaslon@eighteenth\adobecaslon@eighteenthfalse
+\DeclareVoidOption{c18th}{\def\adobecaslonf@ntsuffix{aa8}\ifadobecaslon@eighteenthtrue}
+\DeclareVoidOption{swashlongs}{\def\adobecaslonf@ntsuffix{aaw}}
+\DeclareBoolOption[false]{extraligs}
+\DeclareBoolOption[true]{rmdefault}
+\DeclareComplementaryOption{normdefault}{rmdefault}
 \DeclareStringOption[1.00]{scaled}
 \DeclareBoolOption{bold}
 \DeclareComplementaryOption{semibold}{bold}
 \ProcessKeyvalOptions*
-\ifadobecaslon@normdefault\else
-  \renewcommand{\rmdefault}{pac\f@ntsuffix}
+\def\adobecaslonf@ntextraligs{}
+\ifadobecaslon@extraligs
+  \def\adobecaslonf@ntextraligs{e}
+  \ifthenelse{\(\boolean{adobecaslon@longs}\OR\boolean{adobecaslon@eighteenth}\)}{%
+    \edef\adobecaslonf@ntsuffix{\adobecaslonf@ntsuffix e}}{}
+\fi
+\ifadobecaslon@rmdefault
+  \renewcommand{\rmdefault}{pac\adobecaslonf@ntsuffix}
   \ifadobecaslon@bold\else
     \def\bfdefault{sb}
   \fi
@@ -841,8 +1004,8 @@
 \DeclareRobustCommand\adobecaslonexpert{\fontfamily{pacx}\selectfont}
 \DeclareRobustCommand\adobecaslonosf{\fontfamily{pacj}\selectfont}
 \DeclareRobustCommand\adobecaslonalternate{\fontfamily{paca}\selectfont}
-\DeclareRobustCommand\adobecaslonlongs{\fontfamily{pacaa}\selectfont}
-\DeclareRobustCommand\adobecaslonceighteenth{\fontfamily{pacaa8}\selectfont}
+\DeclareRobustCommand\adobecaslonlongs{\fontfamily{pacaa\adobecaslonf@ntextraligs}\selectfont}
+\DeclareRobustCommand\adobecasloneighteenth{\fontfamily{pacaa8\adobecaslonf@ntextraligs}\selectfont}
 \DeclareRobustCommand\adobecaslonswashit{\usefont{T1}{pacw}{\f@series}{it}}
 \DeclareRobustCommand\adobecaslonswashcaps{\usefont{U}{pac}{\f@series}{iw}}
 \DeclareRobustCommand\adobecaslonornaments{\usefont{U}{pac}{m}{n}}
@@ -853,7 +1016,7 @@
 %
 % A file with slight variants for core and expert fonts:
 %
-%<*pac-sample,pac-sample-expert>
+%<*pac-sample,pac-sample-expert,pac-sample-extraligs>
 %    \begin{macrocode}
 \documentclass{article}
 
@@ -865,12 +1028,13 @@
 \fi
 %<pac-sample>\usepackage[bold]{adobecaslon}
 %<pac-sample-expert>\usepackage[expert,bold]{adobecaslon}
+%<pac-sample-extraligs>\usepackage[extraligs,expert,bold]{adobecaslon}
 \usepackage{textcomp}
 \usepackage{lipsum}
 \usepackage{slantsc}
 
 %<pac-sample>\newcommand{\sampletext}{0123456789. fi, ffi, \textsc{small caps}.}
-%<pac-sample-expert>\newcommand{\sampletext}{0123456789 {\adobecaslonosf 0123456789}. fi, ffi, \textsc{small caps}, {\adobecaslonalternate ct st}.}
+%<pac-sample-expert,pac-sample-extraligs>\newcommand{\sampletext}{0123456789 {\adobecaslonosf 0123456789}. fi, ffi, \textsc{small caps}, {\adobecaslonalternate ct st}.}
 
 \begin{document}
 
@@ -891,7 +1055,9 @@ Adobe Caslon Regular: \sampletext
 Package \textsf{textcomp} allows us to typeset currencies: \texteuro25.00,
 \pounds4.5, \textdollar6, \textyen4.
 
-{\adobecaslonlongs Some words with long `s': dress splice slice strife finesse sift shine stints.
+%</pac-sample,pac-sample-expert,pac-sample-extraligs>
+%<*pac-sample-expert,pac-sample-extraligs>
+{\adobecaslonlongs Some words with long `s': dress splice slice strife finesse sift shine session tussle stints.
 
 A long line with splits-seen and a word to be hyphenated and should long: shes\-ellsseashells.
 
@@ -903,13 +1069,15 @@ Swash caps: {\adobecaslonswashcaps SQT}.
 
 Ornaments: {\adobecaslonornaments 123ABCabc}.
 
-18th-century mode: {\adobecaslonceighteenth dress, kasbah, shake, sforza, fsork, ska}.
+18th-century mode: {\adobecasloneighteenth dress, kasbah, shake, sforza, fsork, ska}.
 
+%</pac-sample-expert,pac-sample-extraligs>
+%<*pac-sample,pac-sample-expert,pac-sample-extraligs>
 \lipsum[1]
 
 \end{document}
 %    \end{macrocode}
-%</pac-sample,pac-sample-expert>
+%</pac-sample,pac-sample-expert,pac-sample-extraligs>
 %
 %\Finale
 %\clearpage

@@ -1,5 +1,5 @@
---- t1a.etx	2013-08-05 11:54:30.245539429 +0100
-+++ t1aa.etx	2013-08-05 11:57:59.626142699 +0100
+--- t1a.etx	2014-03-31 00:58:21.418830227 +0100
++++ t1aa.etx	2014-03-31 01:03:10.011488658 +0100
 @@ -408,11 +408,23 @@
        It is used to stop ligaturing in words like `shelf{}ful'.}
  \endsetslot
@@ -90,7 +90,25 @@
  \endsetslot
  
  \setslot{greater}
-@@ -773,6 +796,7 @@
+@@ -723,10 +746,13 @@
+    \comment{The closing square bracket `]'.}
+ \endsetslot
+ 
+-\setslot{asciicircum}
+-   \comment{The ASCII upward-pointing arrow head `\textasciicircum'.
+-      This is included for compatibility with typewriter fonts used
+-      for computer listings.}
++% \setslot{asciicircum}
++%    \comment{The ASCII upward-pointing arrow head `\textasciicircum'.
++%       This is included for compatibility with typewriter fonts used
++%       for computer listings.}
++% \endsetslot
++\setslot{longst}
++   \comment{The ligature `long s' `{t}'.}
+ \endsetslot
+ 
+ \setslot{underscore}
+@@ -773,6 +799,7 @@
           \ligature{LIG}{\lc{I}{i}}{\lclig{FI}{fi}}
           \ligature{LIG}{\lc{F}{f}}{\lclig{FF}{ff}}
           \ligature{LIG}{\lc{L}{l}}{\lclig{FL}{fl}}
@@ -98,7 +116,7 @@
        \Fi
        \comment{The letter `{f}'.}
     \endsetslot
-@@ -831,14 +855,33 @@
+@@ -831,14 +858,33 @@
     \comment{The letter `{r}'.}
  \endsetslot
  
@@ -140,3 +158,21 @@
  
  \setslot{\lc{T}{t}}
     \comment{The letter `{t}'.}
+@@ -882,10 +928,13 @@
+    \comment{The closing curly brace `\textbraceright'.}
+ \endsetslot
+ 
+-\setslot{asciitilde}
+-   \comment{The ASCII tilde `\textasciitilde'.
+-      This is included for compatibility with typewriter fonts used
+-      for computer listings.}
++% \setslot{asciitilde}
++%    \comment{The ASCII tilde `\textasciitilde'.
++%       This is included for compatibility with typewriter fonts used
++%       for computer listings.}
++% \endsetslot
++\setslot{longsh}
++   \comment{The ligature `long s' `{h}'.}
+ \endsetslot
+ 
+ \setslot{hyphenchar}

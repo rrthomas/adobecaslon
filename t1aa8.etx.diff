@@ -1,5 +1,5 @@
---- t1aa.etx	2013-08-05 11:59:43.778427295 +0100
-+++ t1aa8.etx	2013-08-05 11:59:43.782427460 +0100
+--- t1aa.etx	2014-03-31 23:14:29.232681855 +0100
++++ t1aa8.etx	2014-03-31 23:14:29.232681855 +0100
 @@ -415,15 +415,15 @@
  %       like in a monowidth font.}
  % \endsetslot
@@ -25,7 +25,7 @@
     \comment{The ligature `long s' `long s'.}
  \endsetslot
  
-@@ -864,7 +864,7 @@
+@@ -867,7 +867,7 @@
  % \Fi
  \setslot{\lc{S}{longs}}
     \ligature{LIG}{visiblespace}{\lc{S}{s}}
@@ -34,7 +34,7 @@
     \ligature{LIG}{\lc{S}{longs}}{longdbls}
     \ligature{LIG}{\lc{H}{h}}{longsh}
     \ligature{LIG}{\lc{I}{i}}{longsi}
-@@ -880,6 +880,8 @@
+@@ -883,6 +883,8 @@
     \ligature{LIG/}{quoteright}{\lc{S}{s}}
     \ligature{LIG/}{hyphen}{\lc{S}{s}}
     \ligature{LIG/}{\lc{F}{f}}{\lc{S}{s}}
@@ -43,7 +43,7 @@
     \comment{The letter `long s'.}
  \endsetslot
  
-@@ -1472,8 +1474,11 @@
+@@ -1478,8 +1480,11 @@
        in \plain\ \TeX.}
  \endsetslot
  

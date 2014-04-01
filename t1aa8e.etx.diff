@@ -1,0 +1,49 @@
+--- t1aa8.etx	2014-03-31 23:14:29.232681855 +0100
++++ t1aa8e.etx	2014-03-31 01:03:15.943748856 +0100
+@@ -424,6 +424,8 @@
+  \ligature{LIG/}{exclam}{longss}
+  \ligature{LIG/}{parenright}{longss}
+  \ligature{LIG/}{quoteright}{longss}
++ \ligature{LIG}{\lc{I}{i}}{longdblsi}
++ \ligature{LIG}{\lc{l}{l}}{longdblsl}
+    \comment{The ligature `long s' `long s'.}
+ \endsetslot
+ 
+@@ -755,11 +757,14 @@
+    \comment{The ligature `long s' `{t}'.}
+ \endsetslot
+ 
+-\setslot{underscore}
+-   \comment{The ASCII underline character `\textunderscore', usually
+-      set on the baseline.
+-      This is included for compatibility with typewriter fonts used
+-      for computer listings.}
++% \setslot{underscore}
++%    \comment{The ASCII underline character `\textunderscore', usually
++%       set on the baseline.
++%       This is included for compatibility with typewriter fonts used
++%       for computer listings.}
++% \endsetslot
++\setslot{longdblsi}
++   \comment{The ligature `long s' `long s' `{i}'.}
+ \endsetslot
+ 
+ \setslot{quoteleft}
+@@ -920,10 +925,13 @@
+    \comment{The opening curly brace `\textbraceleft'.}
+ \endsetslot
+ 
+-\setslot{bar}
+-   \comment{The ASCII vertical bar `\textbar'.
+-      This is included for compatibility with typewriter fonts used
+-      for computer listings.}
++% \setslot{bar}
++%    \comment{The ASCII vertical bar `\textbar'.
++%       This is included for compatibility with typewriter fonts used
++%       for computer listings.}
++% \endsetslot
++\setslot{longdblsl}
++   \comment{The ligature `long s' `long s' `{l}'.}
+ \endsetslot
+ 
+ \setslot{braceright}

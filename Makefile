@@ -10,7 +10,7 @@ build: prepare
 	$(MAKE) fonts
 	pdflatex pac-sample.tex
 
-expert: prepare
+fontinst-expert: prepare
 	cp t1.etx t1a.etx
 	patch t1a.etx t1a.etx.diff
 	cp t1a.etx t1aa.etx
@@ -18,10 +18,21 @@ expert: prepare
 	cp t1aa.etx t1aa8.etx
 	patch t1aa8.etx t1aa8.etx.diff
 	fontinst pac-expert-drv.tex
+
+build-expert: fontinst-expert
 	$(MAKE) fonts
 	cat pac-extra.map >> pac.map
-	pdflatex pac-sample.tex
 	pdflatex pac-sample-expert.tex
+
+build-extraligs: fontinst-expert
+	cp t1aa.etx t1aae.etx
+	patch t1aae.etx t1aae.etx.diff
+	cp t1aa8.etx t1aa8e.etx
+	patch t1aa8e.etx t1aa8e.etx.diff
+	fontinst pac-extraligs-drv.tex
+	$(MAKE) fonts
+	cat pac-extra.map >> pac.map
+	pdflatex pac-sample-extraligs.tex
 
 prepare:
 	latex adobecaslon.ins
@@ -62,5 +73,5 @@ uninstall:
 	rm -f $(TEXMF)/doc/tex/latex/$(FONT)/*.pdf
 
 clean:
-	rm -f *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo *.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf *.pdf pac-drv.tex pac-sample.tex pac-expert-drv.tex pac-sample-expert.tex pac-map.tex pac-rec.tex pac.map adobecaslon.sty t1a.etx t1aa.etx t1aj.etx t1aaj.etx
+	rm -f *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo *.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf *.pdf pac-drv.tex pac-sample.tex pac-expert-drv.tex pac-sample-expert.tex pac-extraligs-drv.tex pac-sample-extraligs.tex pac-map.tex pac-rec.tex pac.map adobecaslon.sty t1a.etx t1aa.etx t1aj.etx t1aaj.etx
 	rm -rf texmf-dist
