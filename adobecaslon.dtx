@@ -360,6 +360,22 @@
 % \item `Long s' is shortened before b and k.
 % \end{itemize}
 %
+%\subsection{Bugs and future work}
+%
+% Small caps incorrectly try to make non-existent ligatures. The workaround
+% is to avoid using |\adobecaslonalternate| or |\adobecasloneighteenth| with
+% |\textsc|. It may be convenient to make a definition such as:
+%
+% \begin{verbatim}
+% \newcommand{\smallcaps}[1]{{\adobecaslonexpert\textsc{#1}}}
+% \end{verbatim}
+%
+% It might seem odd that for version~2 of this package, prepared in 2014, we are
+% still using fontinst and PostScript Type~1 fonts. The reason is that as of
+% \TeX\ Live~2012, \LuaTeX\ seems to kern Adobe Caslon Pro poorly, and the
+% |hlig| historical ligature rules don't seem to work as expected.
+%
+%
 % \StopEventually{
 %   \clearpage
 %
@@ -369,11 +385,6 @@
 % \clearpage
 %\section{Implementation}
 %\label{sec:impl}
-%
-% It might seem odd that for version~2 of this package, prepared in 2014, we are
-% still using fontinst and PostScript Type~1 fonts. The reason is that as of
-% \TeX\ Live~2012, \LuaTeX\ seems to kern Adobe Caslon Pro poorly, and the
-% |hlig| historical ligature rules don't seem to work as expected.
 %
 %\subsection{Identification}
 %\label{sec:ident}
@@ -404,8 +415,6 @@
 \end{document}
 %</driver>
 %    \end{macrocode}
-%
-%
 %
 %\subsection{Fontinst Driver}
 %\label{sec:pac-drv}
@@ -722,7 +731,7 @@
 \installfont{pacbiaae9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{it}{ <->\string\adobecaslon@scaled}
 %    \end{macrocode}
 %
-% Then the \texttt{c18th}with \texttt{extraligs} option:
+% Then the \texttt{c18th} with \texttt{extraligs} option:
 %    \begin{macrocode}
 \installfamily{T1}{pacaa8e}{}
 \installfont{pacraa8e9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{n}{ <->\string\adobecaslon@scaled}
@@ -1009,9 +1018,9 @@
 \DeclareVoidOption{swashit}{\def\adobecaslonf@ntsuffix{w}}
 \DeclareVoidOption{alternate}{\def\adobecaslonf@ntsuffix{a}}
 \newif\ifadobecaslon@longs\adobecaslon@longsfalse
-\DeclareVoidOption{longs}{\def\adobecaslonf@ntsuffix{aa}\ifadobecaslon@longstrue}
+\DeclareVoidOption{longs}{\def\adobecaslonf@ntsuffix{aa}\adobecaslon@longstrue}
 \newif\ifadobecaslon@eighteenth\adobecaslon@eighteenthfalse
-\DeclareVoidOption{c18th}{\def\adobecaslonf@ntsuffix{aa8}\ifadobecaslon@eighteenthtrue}
+\DeclareVoidOption{c18th}{\def\adobecaslonf@ntsuffix{aa8}\adobecaslon@eighteenthtrue}
 \DeclareVoidOption{swashlongs}{\def\adobecaslonf@ntsuffix{aaw}}
 \DeclareBoolOption[false]{extraligs}
 \DeclareBoolOption[true]{rmdefault}
