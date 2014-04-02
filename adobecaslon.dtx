@@ -34,7 +34,7 @@
 % OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 % POSSIBILITY OF SUCH DAMAGE.
 %
-% \CheckSum{846}
+% \CheckSum{831}
 %
 %
 %% \CharacterTable
@@ -557,7 +557,6 @@
 % Now we install the fonts.  First T1:
 %    \begin{macrocode}
 \installfonts
-\installfamily{T1}{pac}{}
 \installfont{pacr8t}{pacr8r,newlatin}{t1}{T1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacro8t}{pacro8r,newlatin}{t1}{T1}{pac}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrc8t}{pacr8r,newlatin}{t1c}{T1}{pac}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -570,26 +569,20 @@
 \installfont{pacsi8t}{pacsi8r,newlatin}{t1}{T1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacb8t}{pacb8r,newlatin}{t1}{T1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbi8t}{pacbi8r,newlatin}{t1}{T1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
-\endinstallfonts
 %    \end{macrocode}
 %
 % Then TS1:
 %    \begin{macrocode}
-\installfonts
-\installfamily{TS1}{pac}{}
 \installfont{pacr8c}{pacr8r,textcomp}{ts1}{TS1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacri8c}{pacri8r,textcomp}{ts1}{TS1}{pac}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacs8c}{pacs8r,textcomp}{ts1}{TS1}{pac}{sb}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacsi8c}{pacsi8r,textcomp}{ts1}{TS1}{pac}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacb8c}{pacb8r,textcomp}{ts1}{TS1}{pac}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbi8c}{pacbi8r,textcomp}{ts1}{TS1}{pac}{b}{it}{ <->\string\adobecaslon@scaled}
-\endinstallfonts
 %    \end{macrocode}
 % 
 % And OT1:
 %    \begin{macrocode}
-\installfonts
-\installfamily{OT1}{pac}{}
 \installfont{pacr7t}{pacr8r,newlatin}{ot1}{OT1}{pac}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacro7t}{pacro8r,newlatin}{ot1}{OT1}{pac}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrc7t}{pacr8r,newlatin}{ot1c}{OT1}{pac}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -616,7 +609,6 @@
 % First, the \texttt{expert} option:
 %    \begin{macrocode}
 %<*pac-expert-drv>
-\installfamily{T1}{pacx}{}
 \installfont{pacr9e}{pacr8r,pacr8x,newlatin}{t1}{T1}{pacx}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacro9e}{pacro8r,pacro8x,newlatin}{t1}{T1}{pacx}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrc9e}{pacrc8x,pacr8x,newlatin}{t1}{T1}{pacx}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -630,7 +622,6 @@
 \installfont{pacb9e}{pacb8r,pacb8x,newlatin}{t1}{T1}{pacx}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbi9e}{pacbi8r,pacbi8x,newlatin}{t1}{T1}{pacx}{b}{it}{ <->\string\adobecaslon@scaled}
 
-\installfamily{TS1}{pacx}{}
 \installfont{pacr9c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{pacx}{m}{n}{}
 \installfont{pacro9c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{pacx}{m}{sl}{}
 \installfont{pacri9c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{pacx}{m}{it}{}
@@ -643,7 +634,6 @@
 %
 % The \texttt{osf} option:
 %    \begin{macrocode}
-\installfamily{T1}{pacj}{}
 \installfont{pacr9d}{pacr8r,pacr8x,newlatin}{t1j}{T1}{pacj}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacro9d}{pacro8r,pacro8x,newlatin}{t1j}{T1}{pacj}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrc9d}{pacrc8x,pacr8x,newlatin}{t1j}{T1}{pacj}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -660,7 +650,6 @@
 %
 % The \texttt{alternate} option:
 %    \begin{macrocode}
-\installfamily{T1}{paca}{}
 \installfont{pacra9d}{pacr8r,pacr7a,pacr8x,newlatina}{t1aj}{T1}{paca}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroa9d}{pacro8r,pacro8x,newlatina}{t1aj}{T1}{paca}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrca9d}{pacrc8x,pacr8x,newlatina}{t1aj}{T1}{paca}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -677,7 +666,6 @@
 %
 % The \texttt{longs} option:
 %    \begin{macrocode}
-\installfamily{T1}{pacaa}{}
 \installfont{pacraa9d}{pacr8r,pacr7a,pacr8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaa9d}{pacro8r,pacro8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrcaa9d}{pacrc8x,pacr8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -694,7 +682,6 @@
 %
 % The \texttt{c18th} option:
 %    \begin{macrocode}
-\installfamily{T1}{pacaa8}{}
 \installfont{pacraa89d}{pacr8r,pacr7a,pacr8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaa89d}{pacro8r,pacro8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrcaa89d}{pacrc8x,pacr8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -714,7 +701,6 @@
 % \texttt{extraligs} option (see Section~\ref{sec:extraligs}):
 %    \begin{macrocode}
 %<*pac-extraligs-drv>
-\installfamily{T1}{pacaae}{}
 \installfont{pacraae9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaae9d}{pacro8r,pacro8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrcaae9d}{pacrc8x,pacr8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{sc}{ <->\string\adobecaslon@scaled}
@@ -731,7 +717,6 @@
 %
 % Then the \texttt{c18th} with \texttt{extraligs} option:
 %    \begin{macrocode}
-\installfamily{T1}{pacaa8e}{}
 \installfont{pacraa8e9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaa8e9d}{pacro8r,pacro8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{sl}{ <->\string\adobecaslon@scaled}
 \installfont{pacrcaa8e9d}{pacrc8x,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{sc}{ <->\string\adobecaslon@scaled}
