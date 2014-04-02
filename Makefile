@@ -32,6 +32,7 @@ build-extraligs: fontinst-expert
 	fontinst pac-extraligs-drv.tex
 	$(MAKE) fonts
 	cat pac-extra.map >> pac.map
+	pdflatex pac-sample-expert.tex
 	pdflatex pac-sample-extraligs.tex
 
 prepare:
