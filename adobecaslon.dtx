@@ -34,7 +34,7 @@
 % OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 % POSSIBILITY OF SUCH DAMAGE.
 %
-% \CheckSum{831}
+% \CheckSum{908}
 %
 %
 %% \CharacterTable
@@ -360,14 +360,6 @@
 %
 %\subsection{Bugs and future work}
 %
-% Small caps incorrectly try to make non-existent ligatures. The workaround
-% is to avoid using |\adobecaslonalternate| or |\adobecasloneighteenth| with
-% |\textsc|. It may be convenient to make a definition such as:
-%
-% \begin{verbatim}
-% \newcommand{\smallcaps}[1]{{\adobecaslonexpert\textsc{#1}}}
-% \end{verbatim}
-%
 % It might seem odd that for version~2 of this package, prepared in 2014, we are
 % still using fontinst and PostScript Type~1 fonts. The reason is that as of
 % \TeX\ Live~2012, \LuaTeX\ seems to kern Adobe Caslon Pro poorly, and the
@@ -652,13 +644,13 @@
 %    \begin{macrocode}
 \installfont{pacra9d}{pacr8r,pacr7a,pacr8x,newlatina}{t1aj}{T1}{paca}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroa9d}{pacro8r,pacro8x,newlatina}{t1aj}{T1}{paca}{m}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacrca9d}{pacrc8x,pacr8x,newlatina}{t1aj}{T1}{paca}{m}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcoa9d}{pacrco8x,pacro8x,newlatina}{t1aj}{T1}{paca}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacrca9d}{pacrc8x,pacr8x,newlatinasc}{t1aj}{T1}{paca}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoa9d}{pacrco8x,pacro8x,newlatinasc}{t1aj}{T1}{paca}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacria9d}{pacri8r,pacri7a,pacri8x,newlatina}{t1aj}{T1}{paca}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacsa9d}{pacs8r,pacs7a,pacs8x,newlatina}{t1aj}{T1}{paca}{sb}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacsoa9d}{pacso8r,pacso8x,newlatina}{t1aj}{T1}{paca}{sb}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacsca9d}{pacsc8x,pacs8x,newlatina}{t1aj}{T1}{paca}{sb}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacscoa9d}{pacsco8x,pacso8x,newlatina}{t1aj}{T1}{paca}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacsca9d}{pacsc8x,pacs8x,newlatinasc}{t1aj}{T1}{paca}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoa9d}{pacsco8x,pacso8x,newlatinasc}{t1aj}{T1}{paca}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsia9d}{pacsi8r,pacsi7a,pacsi8x,newlatina}{t1aj}{T1}{paca}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacba9d}{pacb8r,pacb7a,pacb8x,newlatina}{t1aj}{T1}{paca}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbia9d}{pacbi8r,pacbi7a,pacbi8x,newlatina}{t1aj}{T1}{paca}{b}{it}{ <->\string\adobecaslon@scaled}
@@ -668,13 +660,13 @@
 %    \begin{macrocode}
 \installfont{pacraa9d}{pacr8r,pacr7a,pacr8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaa9d}{pacro8r,pacro8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcaa9d}{pacrc8x,pacr8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcoaa9d}{pacrco8x,pacro8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaa9d}{pacrc8x,pacr8x,newlatinaasc}{t1aaj}{T1}{pacaa}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaa9d}{pacrco8x,pacro8x,newlatinaasc}{t1aaj}{T1}{pacaa}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacriaa9d}{pacri8r,pacri7a,pacri8x,newlatinaa}{t1aaj}{T1}{pacaa}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacsaa9d}{pacs8r,pacs7a,pacs8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacsoaa9d}{pacso8r,pacso8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacscaa9d}{pacsc8x,pacs8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacscoaa9d}{pacsco8x,pacso8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaa9d}{pacsc8x,pacs8x,newlatinaasc}{t1aaj}{T1}{pacaa}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaa9d}{pacsco8x,pacso8x,newlatinaasc}{t1aaj}{T1}{pacaa}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsiaa9d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa9d}{pacb8r,pacb7a,pacb8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa9d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{it}{ <->\string\adobecaslon@scaled}
@@ -684,13 +676,13 @@
 %    \begin{macrocode}
 \installfont{pacraa89d}{pacr8r,pacr7a,pacr8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaa89d}{pacro8r,pacro8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcaa89d}{pacrc8x,pacr8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcoaa89d}{pacrco8x,pacro8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaa89d}{pacrc8x,pacr8x,newlatinaa8sc}{t1aa8j}{T1}{pacaa8}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaa89d}{pacrco8x,pacro8x,newlatinaa8sc}{t1aa8j}{T1}{pacaa8}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacriaa89d}{pacri8r,pacri7a,pacri8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacsaa89d}{pacs8r,pacs7a,pacs8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacsoaa89d}{pacso8r,pacso8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacscaa89d}{pacsc8x,pacs8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacscoaa89d}{pacsco8x,pacso8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaa89d}{pacsc8x,pacs8x,newlatinaa8sc}{t1aa8j}{T1}{pacaa8}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaa89d}{pacsco8x,pacso8x,newlatinaa8sc}{t1aa8j}{T1}{pacaa8}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsiaa89d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa89d}{pacb8r,pacb7a,pacb8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa89d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{it}{ <->\string\adobecaslon@scaled}
@@ -703,13 +695,13 @@
 %<*pac-extraligs-drv>
 \installfont{pacraae9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaae9d}{pacro8r,pacro8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcaae9d}{pacrc8x,pacr8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcoaae9d}{pacrco8x,pacro8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaae9d}{pacrc8x,pacr8x,newlatinaaesc}{t1aaje}{T1}{pacaae}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaae9d}{pacrco8x,pacro8x,newlatinaaesc}{t1aaje}{T1}{pacaae}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacriaae9d}{pacri8r,pacri7a,pacri7ae,pacri8x,newlatinaae}{t1aaje}{T1}{pacaae}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacsaae9d}{pacs8r,pacs7a,pacs7ae,pacs8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacsoaae9d}{pacso8r,pacso8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacscaae9d}{pacsc8x,pacs8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacscoaae9d}{pacsco8x,pacso8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaae9d}{pacsc8x,pacs8x,newlatinaaesc}{t1aaje}{T1}{pacaae}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaae9d}{pacsco8x,pacso8x,newlatinaaesc}{t1aaje}{T1}{pacaae}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsiaae9d}{pacsi8r,pacsi7a,pacsi7ae,pacsi8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaae9d}{pacb8r,pacb7a,pacb7ae,pacb8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaae9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{it}{ <->\string\adobecaslon@scaled}
@@ -719,13 +711,13 @@
 %    \begin{macrocode}
 \installfont{pacraa8e9d}{pacr8r,pacr7a,pacr7ae,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacroaa8e9d}{pacro8r,pacro8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcaa8e9d}{pacrc8x,pacr8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacrcoaa8e9d}{pacrco8x,pacro8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcaa8e9d}{pacrc8x,pacr8x,newlatinaa8esc}{t1aa8je}{T1}{pacaa8e}{m}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacrcoaa8e9d}{pacrco8x,pacro8x,newlatinaa8esc}{t1aa8je}{T1}{pacaa8e}{m}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacriaa8e9d}{pacri8r,pacri7a,pacri7ae,pacri8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{m}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacsaa8e9d}{pacs8r,pacs7a,pacs7ae,pacs8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacsoaa8e9d}{pacso8r,pacso8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{sl}{ <->\string\adobecaslon@scaled}
-\installfont{pacscaa8e9d}{pacsc8x,pacs8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{sc}{ <->\string\adobecaslon@scaled}
-\installfont{pacscoaa8e9d}{pacsco8x,pacso8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{scit}{ <->\string\adobecaslon@scaled}
+\installfont{pacscaa8e9d}{pacsc8x,pacs8x,newlatinaa8esc}{t1aa8je}{T1}{pacaa8e}{sb}{sc}{ <->\string\adobecaslon@scaled}
+\installfont{pacscoaa8e9d}{pacsco8x,pacso8x,newlatinaa8esc}{t1aa8je}{T1}{pacaa8e}{sb}{scit}{ <->\string\adobecaslon@scaled}
 \installfont{pacsiaa8e9d}{pacsi8r,pacsi7a,pacsi7ae,pacsi8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa8e9d}{pacb8r,pacb7a,pacb7ae,pacb8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa8e9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{b}{it}{ <->\string\adobecaslon@scaled}
@@ -762,24 +754,15 @@
 %
 %\subsection{Metrics}
 %
-% Old-style ligatures on modern letters:
+% Old-style ligatures on modern letters.
 %
 %<*newlatina>
 %    \begin{macrocode}
 \relax
-
 \metrics
 
 \inputmtx{newlatin}
-
-%% Kerning
-
-\setleftkerning{st}{s}{1000}
-\setleftkerning{ct}{c}{1000}
-\setrightkerning{st}{t}{1000}
-\setrightkerning{ct}{t}{1000}
-
-%% Unfakable glyphs
+\inputmtx{oldstyle-kerning}
 
 \unfakable{st}
 \unfakable{ct}
@@ -788,29 +771,38 @@
 %    \end{macrocode}
 %</newlatina>
 %
+% Old-style ligatures with small caps.
+%
+%<*newlatinasc>
+%    \begin{macrocode}
+\relax
+\metrics
+
+\inputmtx{newlatin}
+\inputmtx{oldstyle-kerning}
+
+\setglyph{st}
+  \glyph{s}{1000}
+  \glyph{t}{1000}
+\endsetglyph
+\setglyph{ct}
+  \glyph{c}{1000}
+  \glyph{t}{1000}
+\endsetglyph
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinasc>
+%
 % The `long s' variant.
 %
 %<*newlatinaa>
 %    \begin{macrocode}
 \relax
-
 \metrics
 
 \inputmtx{newlatina}
-
-%% Kerning
-
-\setleftkerning{longsh}{longs}{1000}
-\setrightkerning{longsh}{h}{1000}
-\setleftkerning{longsi}{longs}{1000}
-\setrightkerning{longsi}{i}{1000}
-\setleftkerning{longsl}{longs}{1000}
-\setrightkerning{longsl}{l}{1000}
-\setleftkerning{longst}{longs}{1000}
-\setrightkerning{longst}{t}{1000}
-\setleftrightkerning{longdbls}{longs}{1000}
-
-%% Unfakable glyphs
+\inputmtx{longs-kerning}
 
 \unfakable{longs}
 \unfakable{longsh}
@@ -823,24 +815,53 @@
 %    \end{macrocode}
 %</newlatinaa>
 %
+% The `long s' variant for small caps.
+%
+%<*newlatinaasc>
+%    \begin{macrocode}
+\relax
+\metrics
+
+\inputmtx{newlatinasc}
+\inputmtx{longs-kerning}
+
+\setglyph{longs}
+  \glyph{s}{1000}
+\endsetglyph
+\setglyph{longsh}
+  \glyph{s}{1000}
+  \glyph{h}{1000}
+\endsetglyph
+\setglyph{longsi}
+  \glyph{s}{1000}
+  \glyph{i}{1000}
+\endsetglyph
+\setglyph{longsl}
+  \glyph{s}{1000}
+  \glyph{l}{1000}
+\endsetglyph
+\setglyph{longst}
+  \glyph{s}{1000}
+  \glyph{t}{1000}
+\endsetglyph
+\setglyph{longdbls}
+  \glyph{s}{1000}
+  \glyph{s}{1000}
+\endsetglyph
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaasc>
+%
 % The `long s' variant with extra ligatures.
 %
 %<*newlatinaae>
 %    \begin{macrocode}
 \relax
-
 \metrics
 
 \inputmtx{newlatinaa}
-
-%% Kerning
-
-\setleftkerning{longdblsi}{longs}{1000}
-\setrightkerning{longdblsi}{i}{1000}
-\setleftkerning{longdblsl}{longs}{1000}
-\setrightkerning{longdblsl}{l}{1000}
-
-%% Unfakable glyphs
+\inputmtx{longdbls-kerning}
 
 \unfakable{longdblsi}
 \unfakable{longdblsl}
@@ -849,50 +870,159 @@
 %    \end{macrocode}
 %</newlatinaae>
 %
-% The 18th century variant:
+% The `long s' variant with extra ligatures for small caps.
+%
+%<*newlatinaaesc>
+%    \begin{macrocode}
+\relax
+\metrics
+
+\inputmtx{newlatinaasc}
+\inputmtx{longdbls-kerning}
+
+\setglyph{longdblsi}
+  \glyph{s}{1000}
+  \glyph{s}{1000}
+  \glyph{i}{1000}
+\endsetglyph
+\setglyph{longdblsl}
+  \glyph{s}{1000}
+  \glyph{s}{1000}
+  \glyph{l}{1000}
+\endsetglyph
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaaesc>
+%
+% The 18th century variant.
+%
 %<*newlatinaa8>
 %    \begin{macrocode}
 \relax
-
 \metrics
 
 \inputmtx{newlatinaa}
-\inputmtx{longss}
+\inputmtx{longss-kerning}
+\inputmtx{longss-glyph}
 
 \endmetrics
 %    \end{macrocode}
 %</newlatinaa8>
 %
-% The 18th century variant with extra ligatures:
+% The 18th century variant for small caps.
+%
+%<*newlatinaa8sc>
+%    \begin{macrocode}
+\relax
+\metrics
+
+\inputmtx{newlatinaasc}
+\inputmtx{longss-kerning}
+\inputmtx{longss-glyph-sc}
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaa8sc>
+%
+% The 18th century variant with extra ligatures.
+%
 %<*newlatinaa8e>
 %    \begin{macrocode}
 \relax
-
 \metrics
 
 \inputmtx{newlatinaae}
-\inputmtx{longss}
+\inputmtx{longss-kerning}
+\inputmtx{longss-glyph}
 
 \endmetrics
 %    \end{macrocode}
 %</newlatinaa8e>
 %
-% A fragment for long `s' followed by `s'.
+% The 18th century variant with extra ligatures for small caps.
+%
+%<*newlatinaa8esc>
 %    \begin{macrocode}
-%<*longss>
-%% Kerning
+\relax
+\metrics
 
+\inputmtx{newlatinaaesc}
+\inputmtx{longss-kerning}
+\inputmtx{longss-glyph-sc}
+
+\endmetrics
+%    \end{macrocode}
+%</newlatinaa8esc>
+%
+% A fragment for kerning old-style ligatures.
+%
+%    \begin{macrocode}
+%<*oldstyle-kerning>
+\setleftkerning{st}{s}{1000}
+\setleftkerning{ct}{c}{1000}
+\setrightkerning{st}{t}{1000}
+\setrightkerning{ct}{t}{1000}
+%    \end{macrocode}
+%</oldstyle-kerning>
+%
+% A fragment for kerning `long s' ligatures.
+%
+%    \begin{macrocode}
+%<*longs-kerning>
+\setleftkerning{longsh}{longs}{1000}
+\setrightkerning{longsh}{h}{1000}
+\setleftkerning{longsi}{longs}{1000}
+\setrightkerning{longsi}{i}{1000}
+\setleftkerning{longsl}{longs}{1000}
+\setrightkerning{longsl}{l}{1000}
+\setleftkerning{longst}{longs}{1000}
+\setrightkerning{longst}{t}{1000}
+\setleftrightkerning{longdbls}{longs}{1000}
+%    \end{macrocode}
+%</longs-kerning>
+%
+% A fragment for kerning `double long s' ligatures.
+%
+%    \begin{macrocode}
+%<*longdbls-kerning>
+\setleftkerning{longdblsi}{longs}{1000}
+\setrightkerning{longdblsi}{i}{1000}
+\setleftkerning{longdblsl}{longs}{1000}
+\setrightkerning{longdblsl}{l}{1000}
+%    \end{macrocode}
+%</longdbls-kerning>
+%
+% A fragment for kerning long `s' followed by `s'.
+%
+%    \begin{macrocode}
+%<*longss-kerning>
 \setleftkerning{longss}{longs}{1000}
 \setrightkerning{longss}{s}{1000}
-
-%% Extra glyphs
-
+%    \end{macrocode}
+%</longss-kerning>
+%
+% A fragment for a long `s' followed by `s' glyph.
+%
+%    \begin{macrocode}
+%<*longss-glyph>
 \setglyph{longss}
   \glyph{longs}{1000}
   \glyph{s}{1000}
 \endsetglyph
 %    \end{macrocode}
-%</longss>
+%</longss-glyph>
+%
+% A fragment for a long `s' followed by `s' glyph for small caps.
+%
+%    \begin{macrocode}
+%<*longss-glyph-sc>
+\setglyph{longss}
+  \glyph{s}{1000}
+  \glyph{s}{1000}
+\endsetglyph
+%    \end{macrocode}
+%</longss-glyph-sc>
 %
 %\subsection{Encodings}
 %
@@ -901,7 +1031,6 @@
 %    \begin{macrocode}
 %<*t1aj>
 \relax
-
 \encoding
 
 %% Define the parameters to produce a font with old-style figures
@@ -918,7 +1047,6 @@
 %    \begin{macrocode}
 %<*t1aaj>
 \relax
-
 \encoding
 
 %% Define the parameters to produce a font with old-style figures
@@ -935,7 +1063,6 @@
 %    \begin{macrocode}
 %<*t1aa8j>
 \relax
-
 \encoding
 
 %% Define the parameters to produce a font with old-style figures
@@ -952,7 +1079,6 @@
 %    \begin{macrocode}
 %<*t1aaje>
 \relax
-
 \encoding
 
 %% Define the parameters to produce a font with old-style figures
@@ -969,7 +1095,6 @@
 %    \begin{macrocode}
 %<*t1aa8je>
 \relax
-
 \encoding
 
 %% Define the parameters to produce a font with old-style figures
