@@ -320,7 +320,9 @@
 % Note that currently hyphenation of long `s' does not work properly:
 % \TeX\ seems to register a word boundary before the hyphen, so the
 % `s' is shortened incorrectly. As a workaround, use |\noboundary|
-% directly before such a hyphenation.
+% directly before such a hyphenation. This applies to automatically
+% inserted hyphenation points as well as manual ones, so unfortunately
+% complicates proof-reading whenever hyphenation is allowed.
 %
 %\subsection{Rules for `long s'}
 %\label{sec:longs}
