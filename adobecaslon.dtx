@@ -335,6 +335,7 @@
 % \item `Long s' becomes short at the end of a word.
 % \item `Long s' becomes short before apostrophe.
 % \item `Long s' becomes short before and after `f'.
+% (But see section~\ref{sec:bugs}.)
 % \item `Long s' before manual hyphen (i.e., glyph |hyphen|; line-break hyphen
 %   is |hyphenchar|) becomes short.
 % \end{itemize}
@@ -359,6 +360,12 @@
 % \end{itemize}
 %
 %\subsection{Bugs and future work}
+%\label{sec:bugs}
+%
+% The rule that `long s' becomes short before `f' is not correctly applied
+% in the case of double `long s' followed by `f', as the double-long-s
+% ligature is not broken. This should be fixed manually, for example by
+% writing |success\/ful|.
 %
 % It might seem odd that for version~2 of this package, prepared in 2014, we are
 % still using fontinst and PostScript Type~1 fonts. The reason is that as of
