@@ -378,7 +378,13 @@
 % package for the swash and ornament fonts should be generated.
 %
 % Ligatures should be broken in small caps (st, ct) for correct operation of
-% |\textls|.
+% |\textls|. A workaround is to avoid using |\adobecaslonalternate| or
+% |\adobecasloneighteenth| with |\textsc|. It may be convenient to make a
+% definition such as:
+%
+% \begin{verbatim}
+% \newcommand{\smallcaps}[1]{{\adobecaslonexpert\textsc{#1}}}
+% \end{verbatim}
 %
 %
 % \StopEventually{
