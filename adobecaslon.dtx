@@ -1,7 +1,7 @@
 % $Id: adobecaslon.dtx,v 1.4 2012-06-06 02:59:08 boris Exp $
 %
 % Copyright (c) 2012, Boris Veytsman
-% Copyright (c) 2013-2014, Reuben Thomas
+% Copyright (c) 2013-2016, Reuben Thomas
 % Copyright (c) 1996, Ulrik Vieth
 %
 % All rights reserved.
@@ -34,7 +34,7 @@
 % OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 % POSSIBILITY OF SUCH DAMAGE.
 %
-% \CheckSum{908}
+% \CheckSum{948}
 %
 %
 %% \CharacterTable
@@ -85,6 +85,9 @@
 %
 % The expert font support is based on the \textsf{acaslon} package by
 % Ulrik Vieth.
+%
+% For text symbols such as footnote marks and currencies, the TS1 encoding
+% is used, which must be activated by using the \textsf{textcomp} package.
 %
 %
 %\section{Installation}
@@ -612,7 +615,7 @@
 %    \end{macrocode}
 %
 % Now the expert and extra ligature fonts, which we make available only in T1
-% encoding.
+% and TS1 encodings.
 %<*pac-expert-drv,pac-extraligs-drv>
 %    \begin{macrocode}
 \installfonts
@@ -675,6 +678,15 @@
 \installfont{pacsia9d}{pacsi8r,pacsi7a,pacsi8x,newlatina}{t1aj}{T1}{paca}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacba9d}{pacb8r,pacb7a,pacb8x,newlatina}{t1aj}{T1}{paca}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbia9d}{pacbi8r,pacbi7a,pacbi8x,newlatina}{t1aj}{T1}{paca}{b}{it}{ <->\string\adobecaslon@scaled}
+
+\installfont{pacra9c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{paca}{m}{n}{}
+\installfont{pacroa9c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{paca}{m}{sl}{}
+\installfont{pacria9c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{paca}{m}{it}{}
+\installfont{pacsa9c}{pacs8r,pacs8x,textcomp}{ts1}{TS1}{paca}{sb}{n}{}
+\installfont{pacsoa9c}{pacso8r,pacso8x,textcomp}{ts1}{TS1}{paca}{sb}{sl}{}
+\installfont{pacsia9c}{pacsi8r,pacsi8x,textcomp}{ts1i}{TS1}{paca}{sb}{it}{}
+\installfont{pacba9c}{pacb8r,pacb8x,textcomp}{ts1}{TS1}{paca}{b}{n}{}
+\installfont{pacbia9c}{pacbi8r,pacbi8x,textcomp}{ts1i}{TS1}{paca}{b}{it}{}
 %    \end{macrocode}
 %
 % The \texttt{longs} option:
@@ -691,6 +703,15 @@
 \installfont{pacsiaa9d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa}{t1aaj}{T1}{pacaa}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa9d}{pacb8r,pacb7a,pacb8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa9d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa}{t1aaj}{T1}{pacaa}{b}{it}{ <->\string\adobecaslon@scaled}
+
+\installfont{pacraa9c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{pacaa}{m}{n}{}
+\installfont{pacroaa9c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{pacaa}{m}{sl}{}
+\installfont{pacriaa9c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{pacaa}{m}{it}{}
+\installfont{pacsaa9c}{pacs8r,pacs8x,textcomp}{ts1}{TS1}{pacaa}{sb}{n}{}
+\installfont{pacsoaa9c}{pacso8r,pacso8x,textcomp}{ts1}{TS1}{pacaa}{sb}{sl}{}
+\installfont{pacsiaa9c}{pacsi8r,pacsi8x,textcomp}{ts1i}{TS1}{pacaa}{sb}{it}{}
+\installfont{pacbaa9c}{pacb8r,pacb8x,textcomp}{ts1}{TS1}{pacaa}{b}{n}{}
+\installfont{pacbiaa9c}{pacbi8r,pacbi8x,textcomp}{ts1i}{TS1}{pacaa}{b}{it}{}
 %    \end{macrocode}
 %
 % The \texttt{c18th} option:
@@ -707,6 +728,15 @@
 \installfont{pacsiaa89d}{pacsi8r,pacsi7a,pacsi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa89d}{pacb8r,pacb7a,pacb8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa89d}{pacbi8r,pacbi7a,pacbi8x,newlatinaa8}{t1aa8j}{T1}{pacaa8}{b}{it}{ <->\string\adobecaslon@scaled}
+
+\installfont{pacraa89c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{pacaa8}{m}{n}{}
+\installfont{pacroaa89c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{pacaa8}{m}{sl}{}
+\installfont{pacriaa89c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{pacaa8}{m}{it}{}
+\installfont{pacsaa89c}{pacs8r,pacs8x,textcomp}{ts1}{TS1}{pacaa8}{sb}{n}{}
+\installfont{pacsoaa89c}{pacso8r,pacso8x,textcomp}{ts1}{TS1}{pacaa8}{sb}{sl}{}
+\installfont{pacsiaa89c}{pacsi8r,pacsi8x,textcomp}{ts1i}{TS1}{pacaa8}{sb}{it}{}
+\installfont{pacbaa89c}{pacb8r,pacb8x,textcomp}{ts1}{TS1}{pacaa8}{b}{n}{}
+\installfont{pacbiaa89c}{pacbi8r,pacbi8x,textcomp}{ts1i}{TS1}{pacaa8}{b}{it}{}
 %</pac-expert-drv>
 %    \end{macrocode}
 %
@@ -726,6 +756,15 @@
 \installfont{pacsiaae9d}{pacsi8r,pacsi7a,pacsi7ae,pacsi8x,newlatinaae}{t1aaje}{T1}{pacaae}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaae9d}{pacb8r,pacb7a,pacb7ae,pacb8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaae9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaae}{t1aaje}{T1}{pacaae}{b}{it}{ <->\string\adobecaslon@scaled}
+
+\installfont{pacraae9c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{pacaae}{m}{n}{}
+\installfont{pacroaae9c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{pacaae}{m}{sl}{}
+\installfont{pacriaae9c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{pacaae}{m}{it}{}
+\installfont{pacsaae9c}{pacs8r,pacs8x,textcomp}{ts1}{TS1}{pacaae}{sb}{n}{}
+\installfont{pacsoaae9c}{pacso8r,pacso8x,textcomp}{ts1}{TS1}{pacaae}{sb}{sl}{}
+\installfont{pacsiaae9c}{pacsi8r,pacsi8x,textcomp}{ts1i}{TS1}{pacaae}{sb}{it}{}
+\installfont{pacbaae9c}{pacb8r,pacb8x,textcomp}{ts1}{TS1}{pacaae}{b}{n}{}
+\installfont{pacbiaae9c}{pacbi8r,pacbi8x,textcomp}{ts1i}{TS1}{pacaae}{b}{it}{}
 %    \end{macrocode}
 %
 % Then the \texttt{c18th} with \texttt{extraligs} option:
@@ -742,6 +781,15 @@
 \installfont{pacsiaa8e9d}{pacsi8r,pacsi7a,pacsi7ae,pacsi8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{sb}{it}{ <->\string\adobecaslon@scaled}
 \installfont{pacbaa8e9d}{pacb8r,pacb7a,pacb7ae,pacb8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{b}{n}{ <->\string\adobecaslon@scaled}
 \installfont{pacbiaa8e9d}{pacbi8r,pacbi7a,pacbi7ae,pacbi8x,newlatinaa8e}{t1aa8je}{T1}{pacaa8e}{b}{it}{ <->\string\adobecaslon@scaled}
+
+\installfont{pacraa8e9c}{pacr8r,pacr8x,textcomp}{ts1}{TS1}{pacaa8e}{m}{n}{}
+\installfont{pacroaa8e9c}{pacro8r,pacro8x,textcomp}{ts1}{TS1}{pacaa8e}{m}{sl}{}
+\installfont{pacriaa8e9c}{pacri8r,pacri8x,textcomp}{ts1i}{TS1}{pacaa8e}{m}{it}{}
+\installfont{pacsaa8e9c}{pacs8r,pacs8x,textcomp}{ts1}{TS1}{pacaa8e}{sb}{n}{}
+\installfont{pacsoaa8e9c}{pacso8r,pacso8x,textcomp}{ts1}{TS1}{pacaa8e}{sb}{sl}{}
+\installfont{pacsiaa8e9c}{pacsi8r,pacsi8x,textcomp}{ts1i}{TS1}{pacaa8e}{sb}{it}{}
+\installfont{pacbaa8e9c}{pacb8r,pacb8x,textcomp}{ts1}{TS1}{pacaa8e}{b}{n}{}
+\installfont{pacbiaa8e9c}{pacbi8r,pacbi8x,textcomp}{ts1i}{TS1}{pacaa8e}{b}{it}{}
 %</pac-extraligs-drv>
 %    \end{macrocode}
 %

@@ -56,8 +56,8 @@ dist:
 	cp -pf *.map texmf-dist/fonts/map/dvips/$(FONT)/
 	mkdir -p texmf-dist/tex/latex/$(FONT)/
 	cp -pf *.sty *.fd texmf-dist/tex/latex/$(FONT)/
-	mkdir -p texmf-dist/doc/tex/latex/$(FONT)/
-	cp -pf README pac-sample-expert.pdf texmf-dist/doc/tex/latex/$(FONT)/
+	mkdir -p texmf-dist/doc/latex/$(FONT)/
+	cp -pf README pac-sample-expert.pdf texmf-dist/doc/latex/$(FONT)/
 	cp -pr texmf/* texmf-dist/
 	cd texmf-dist/ && zip -r ../adobecaslon.tds.zip .
 
@@ -70,8 +70,8 @@ uninstall:
 	rm -f $(TEXMF)/fonts/map/dvips/$(FONT)/*.map
 	rm -f $(TEXMF)/tex/latex/$(FONT)/*.sty
 	rm -f $(TEXMF)/tex/latex/$(FONT)/*.fd
-	rm -f $(TEXMF)/doc/tex/latex/$(FONT)/README
-	rm -f $(TEXMF)/doc/tex/latex/$(FONT)/*.pdf
+	rm -f $(TEXMF)/doc/latex/$(FONT)/README
+	rm -f $(TEXMF)/doc/latex/$(FONT)/*.pdf
 
 clean:
 	rm -f *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo *.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf *.pdf pac-drv.tex pac-sample.tex pac-expert-drv.tex pac-sample-expert.tex pac-extraligs-drv.tex pac-sample-extraligs.tex pac-map.tex pac-rec.tex pac.map adobecaslon.sty t1a.etx t1aa.etx t1aj.etx t1aaj.etx
