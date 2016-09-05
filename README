@@ -5,6 +5,10 @@ This package provides support files for the Adobe Caslon font family
 in pdfLaTeX. (The LuaTeX and XeTeX engines support system fonts
 directly, but there are still good reasons to use pdfTeX.)
 
+Version 2.0:  Added support for expert fonts (Reuben Thomas)
+
+Version 2.1:  Bug fixes, TS1 encoding added for a
+	      number of fonts (Reuben Thomas)
 
 Installation
 ------------
@@ -23,7 +27,7 @@ on the package.)
 Before you start, you must have installed the PostScript Type 1 font
 files (.pfb) in TEXMF/fonts/type1/adobe/adobecaslon
 
-You also need the “make” utility installed (many systems will have
+You also need the ``make'' utility installed (many systems will have
 this already).
 
 Then, if you have just the base fonts, run:
@@ -46,5 +50,5 @@ specify a different TEXMF; for example,
 to install under TEXMFHOME.
 
 Finally, follow the final part of the installation instructions in the
-“Installation” section of adobecaslon.pdf, a copy of which should now
+``Installation'' section of adobecaslon.pdf, a copy of which should now
 be in the current directory.
