@@ -5,13 +5,14 @@ TEXMF=`kpsewhich --expand-var='$$TEXMFLOCAL'`
 VENDOR=adobe
 FONT=adobecaslon
 
+
 build: prepare
 	fontinst pac-drv.tex
 	$(MAKE) fonts
 	pdflatex pac-sample.tex
 
 fontinst-expert: prepare
-	cp t1.etx t1a.etx
+	cp `kpsewhich t1.etx` t1a.etx
 	patch t1a.etx t1a.etx.diff
 	cp t1a.etx t1aa.etx
 	patch t1aa.etx t1aa.etx.diff
@@ -19,12 +20,16 @@ fontinst-expert: prepare
 	patch t1aa8.etx t1aa8.etx.diff
 	fontinst pac-expert-drv.tex
 
-build-expert: fontinst-expert
+build-expert: expert
+
+expert: fontinst-expert
 	$(MAKE) fonts
 	cat pac-extra.map >> pac.map
 	pdflatex pac-sample-expert.tex
 
-build-extraligs: fontinst-expert
+build-extraligs: extraligs
+
+extraligs: fontinst-expert
 	cp t1aa.etx t1aae.etx
 	patch t1aae.etx t1aae.etx.diff
 	cp t1aa8.etx t1aa8e.etx
@@ -43,11 +48,15 @@ fonts:
 	for i in *.pl; do pltotf $$i; done
 	for i in *.vpl; do vptovf $$i; done
 	pdflatex adobecaslon.dtx
-	bibtex adobecaslon
-	makeindex adobecaslon.dtx
+	- bibtex adobecaslon
 	pdflatex adobecaslon.dtx
+	- makeindex -s gind.ist -o adobecaslon.ind adobecaslon.idx
+	- makeindex -s gglo.ist -o adobecaslon.gls adobecaslon.glo
+	pdflatex adobecaslon.dtx
+	while ( grep -q '^LaTeX Warning: Label(s) may have changed' adobecaslon.log) \
+	do pdflatex adobecaslon.dtx; done
 
-dist:
+dist: build 
 	mkdir -p texmf-dist/fonts/vf/$(VENDOR)/$(FONT)/
 	cp -pf *.vf texmf-dist/fonts/vf/$(VENDOR)/$(FONT)/
 	mkdir -p texmf-dist/fonts/tfm/$(VENDOR)/$(FONT)/
@@ -58,21 +67,32 @@ dist:
 	cp -pf *.sty *.fd texmf-dist/tex/latex/$(FONT)/
 	mkdir -p texmf-dist/doc/latex/$(FONT)/
 	cp -pf README pac-sample-expert.pdf texmf-dist/doc/latex/$(FONT)/
-	cp -pr texmf/* texmf-dist/
+	cp -pfr texmf/* texmf-dist/
 	cd texmf-dist/ && zip -r ../adobecaslon.tds.zip .
 
 install: dist
-	cp -pfr texmf-dist/* $(TEXMF)/
+	cp -pfr texmf/* $(TEXMF)/
 
 uninstall:
-	rm -f $(TEXMF)/fonts/vf/$(VENDOR)/$(FONT)/*.vf
-	rm -f $(TEXMF)/fonts/tfm/$(VENDOR)/$(FONT)/*.tf
-	rm -f $(TEXMF)/fonts/map/dvips/$(FONT)/*.map
-	rm -f $(TEXMF)/tex/latex/$(FONT)/*.sty
-	rm -f $(TEXMF)/tex/latex/$(FONT)/*.fd
-	rm -f $(TEXMF)/doc/latex/$(FONT)/README
-	rm -f $(TEXMF)/doc/latex/$(FONT)/*.pdf
+	$(RM) -r $(TEXMF)/fonts/vf/$(VENDOR)/$(FONT)
+	$(RM) -r $(TEXMF)/fonts/tfm/$(VENDOR)/$(FONT)
+	$(RM) -r $(TEXMF)/fonts/map/dvips/$(FONT)
+	$(RM) -r $(TEXMF)/tex/latex/$(FONT)
+	$(RM) -r $(TEXMF)/doc/tex/latex/$(FONT)
 
 clean:
-	rm -f *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo *.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf *.pdf pac-drv.tex pac-sample.tex pac-expert-drv.tex pac-sample-expert.tex pac-extraligs-drv.tex pac-sample-extraligs.tex pac-map.tex pac-rec.tex pac.map adobecaslon.sty t1a.etx t1aa.etx t1aj.etx t1aaj.etx
-	rm -rf texmf-dist
+	$(RM) *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo \
+	*.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf  \
+	*.tex pac.map \
+	adobecaslon.sty *.etx *.tgz  \
+	$(RM) -r texmf-dist
+
+distclean: clean
+	 $(RM) *.zip *.pdf 
+
+archive: build expert dist clean
+	mv adobecaslon.tds.zip ..
+	tar -C .. -zcvf adobecaslon.tgz --exclude '*CVS*' \
+	--exclude 'pfb' --exclude 'afm' --exclude 'inf' \
+	--exclude 'pfm'  adobecaslon adobecaslon.tds.zip
+

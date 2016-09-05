@@ -3,6 +3,7 @@
 /*.blg
 /*.fd
 /*.glo
+/*.gls
 /*.hd
 /*.idx
 /*.ilg
@@ -11,6 +12,9 @@
 /*.mtx
 /*.out
 /*.pdf
+/*.pfb
+/*.pfm
+/*.afm
 /*.pl
 /*.toc
 /*.tfm
