@@ -93,6 +93,7 @@ distclean: clean
 archive: build expert dist clean
 	mv adobecaslon.tds.zip ..
 	tar -C .. -zcvf adobecaslon.tgz --exclude '*CVS*' \
-	--exclude 'pfb' --exclude 'afm' --exclude 'inf' \
-	--exclude 'pfm'  adobecaslon adobecaslon.tds.zip
+	--exclude '*.pfb' --exclude '*.afm' --exclude '*.inf' \
+	--exclude '*.pfm' --exclude '*.tgz' \
+	--exclude '.git' --exclude '.gitignore' adobecaslon adobecaslon.tds.zip
 
