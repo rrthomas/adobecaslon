@@ -25,7 +25,8 @@ Building from development sources
 on the package.)
 
 Before you start, you must have installed the PostScript Type 1 font
-files (.pfb) in TEXMF/fonts/type1/adobe/adobecaslon
+files (.pfb) in TEXMF/fonts/type1/adobe/adobecaslon, and the Adobe
+Font Metric files (.afm) in TEXMF/fonts/afm/adobe/adobecaslon.
 
 You also need the ``make'' utility installed (many systems will have
 this already).
