@@ -83,7 +83,7 @@ uninstall:
 clean:
 	$(RM) *.vpl *.pl *.aux *.log *.out *.bbl *.blg *.glo \
 	*.idx *.ind *.ilg *.hd *.toc *.fd *.mtx *.tfm *.vf  \
-	*.tex pac.map \
+	*.tex *.gls pac.map \
 	adobecaslon.sty *.etx *.tgz  \
 	$(RM) -r texmf-dist
 
